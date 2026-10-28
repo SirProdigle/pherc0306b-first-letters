@@ -166,4 +166,4 @@ This work builds on:
 | | | |
 |:--|:--|:--|
 | **Liam Warner** | segmentation and ink detection | ![Discord: prodigle](https://img.shields.io/badge/Discord-prodigle-5865F2?logo=discord&logoColor=white) [![Bluesky: prodigle.bsky.social](https://img.shields.io/badge/Bluesky-prodigle.bsky.social-0285FF?logo=bluesky&logoColor=white)](https://bsky.app/profile/prodigle.bsky.social) |
-| **Nicola Bodill** | papyrologist | ![Discord: polytrope](https://img.shields.io/badge/Discord-polytrope-5865F2?logo=discord&logoColor=white) |
+| **Nicola Bodill** | papyrologist | ![Discord: polytrope.](https://img.shields.io/badge/Discord-polytrope.-5865F2?logo=discord&logoColor=white) |
