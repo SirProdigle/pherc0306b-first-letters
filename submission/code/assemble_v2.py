@@ -167,7 +167,7 @@ def main():
     cp(f'{V1D}/vendor/libz.so.1.zlib-ng-2.3.3', f'{D}/vendor/libz.so.1.zlib-ng-2.3.3')
     dres = open(f'{HERE}/docker/RESULTS.md').read() if os.path.exists(f'{HERE}/docker/RESULTS.md') else '(pending)'
     open(f'{D}/README.md', 'w').write(open(f'{TX}/docker_README.md').read().replace('{{DOCKER_RESULTS}}', dres))
-    # README (letter rows from letter_dimensions.json), owner-only texts
+    # README (letter rows from letter_dimensions.json) and the form texts
     L = json.load(open(f'{PKG}/letter_dimensions.json'))['letters']; rows = []
     for r in L:
         if not r['measured']: rows.append(f"| {r['position_in_line']} | {r.get('letter', '')} | – | – | – | no ink at half tone |"); continue

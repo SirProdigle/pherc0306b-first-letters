@@ -3,7 +3,7 @@
 
 Version 7 of the lead-A claim package (PHerc0306B w074, mesh V5Rc), for the M306 finalist: one config (make_config_v7.py) gives the
 whole package in version 5's layout (claim image, views, controls, letter-free geometry, README, CHANGES) plus the model's method
-records, the exclusion-zone audit of its training tiles and the owner-only form text.  CPU only.
+records, the exclusion-zone audit of its training tiles and the submission form text.  CPU only.
 Version 5's kit (P3/v5) is copied, never edited; v6's base package is version 5's C3 package (P3/v5/build/v5_C3).
 Run it as
   gaming-mode run -- systemd-run --user --scope -q -p MemoryMax=8G nice -n 19 <python> build_v7.py CONFIG --map FWD.npy --jobs 4
@@ -22,7 +22,7 @@ Steps (default: all, in this order):
   assemble  the rest of the package from the base package (version 5's files, kept), v6 code/ (+ config_v7.json, training code
             copies in code/training/) and docker/, SHA256SUMS
   text      README.md (version 7 section + version 5's README, kept), CHANGES.md, methodology/model_v7/MODEL.md from the templates;
-            the owner-only form text -> <out>.work/text/FORM_owner_only.md; prints every send blocker
+            the submission form text -> <out>.work/text/FORM_owner_only.md; prints every send blocker
   sums      SHA256SUMS again (after any later edit; also part of 'all')
 A config with "dry_run": true is built the same way, but every image footer, the README and the form say DRY RUN.
 Layout: <out>/ holds the package files only; <out>.work/ (beside it) holds maps symlinks, logs, tables, form images and text."""
