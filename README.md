@@ -27,6 +27,7 @@ Two lines of Greek text read in the Herculaneum scroll PHerc. 0306B, from the Ve
 - [Models and data](#models-and-data)
 - [Repository layout](#repository-layout)
 - [Licence, credits and citation](#licence-credits-and-citation)
+- [Contact](#contact)
 
 ## At a glance
 
@@ -160,4 +161,9 @@ This work builds on:
 }
 ```
 
-Contact: Liam Warner, [@SirProdigle](https://github.com/SirProdigle) on GitHub, Prodigle on Discord.
+## Contact
+
+| | | |
+|:--|:--|:--|
+| **Liam Warner** | segmentation and ink detection | ![Discord: prodigle](https://img.shields.io/badge/Discord-prodigle-5865F2?logo=discord&logoColor=white) [![Bluesky: prodigle.bsky.social](https://img.shields.io/badge/Bluesky-prodigle.bsky.social-0285FF?logo=bluesky&logoColor=white)](https://bsky.app/profile/prodigle.bsky.social) |
+| **Nicola Bodill** | papyrologist | ![Discord: polytrope](https://img.shields.io/badge/Discord-polytrope-5865F2?logo=discord&logoColor=white) |
