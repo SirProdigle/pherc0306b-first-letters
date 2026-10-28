@@ -1,0 +1,42 @@
+{
+ "name": "hn4_s0",
+ "note": "DENOISE hard-negative arm: self_main_s1 recipe, seed 0; online hard negatives on labelled background px, weight 1 + gain * p (gain 0306B 4, anchor 4)",
+ "init": "base",
+ "variant": "main",
+ "regions": [
+  "A6",
+  "w052",
+  "w053",
+  "w059",
+  "w109"
+ ],
+ "anchor": [
+  "w058",
+  "w060"
+ ],
+ "training": {
+  "steps": 600,
+  "micro": 4,
+  "n1447": 2,
+  "accum": 4,
+  "w306": 0.5,
+  "lr": 2e-05,
+  "min_lr": 2e-06,
+  "warmup_frac": 0.05,
+  "weight_decay": 1e-06,
+  "seed": 0,
+  "vram_gb": 30.0,
+  "save_steps": [
+   300
+  ],
+  "workers": 6,
+  "grad_ckpt": false
+ },
+ "loss": {
+  "smooth": 0.25,
+  "hn": {
+   "gain_306": 4,
+   "gain_1447": 4
+  }
+ }
+}

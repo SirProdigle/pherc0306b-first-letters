@@ -1,0 +1,5 @@
+# path under W	target in the image
+third_party/v8in	/opt/fl/third_party/v8in
+models/community/reader-v2	/opt/fl/models/community/reader-v2
+models/community/reader-v3	/opt/fl/models/community/reader-v3
+models/community/trace	/opt/fl/models/community/trace

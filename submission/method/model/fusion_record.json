@@ -1,0 +1,64 @@
+{
+ "rule": "product of probabilities (TRACE v3B x A), A = mean of the member maps",
+ "inputs": {
+  "trace": {
+   "path": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/fwd_tr.npy",
+   "sha256": "17eca601c21f3c5c7f263b144c77890d9e25c3cbcc6aa261505e580baf07a9e3"
+  },
+  "member0": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s0_fwd_t1.npy",
+   "sha256": "3ca5a625959d6bb6a287ea56ff469ea33a7717bdcd9558c31da95fa003542a22"
+  },
+  "member1": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s1_fwd_t1.npy",
+   "sha256": "60b4c91c5e5df9637b40ca4107db6533772c0cc715d9e8b5e06b5cff64e318ea"
+  },
+  "member2": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s2_fwd_t1.npy",
+   "sha256": "a0a668f4de7d86df777aff601f30f8cd711eeab67b6ffa21280ca19fd3a180aa"
+  },
+  "shuf_trace": {
+   "path": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/v4c_work/shuf_maps/fwd_tr.npy",
+   "sha256": "d07a22807c506f8bd6595254fa74a055db6aa08349e9e76a1a651da3cec97ce6"
+  },
+  "shuf_member0": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s0_shuf_t1.npy",
+   "sha256": "097f2ae0c9c6210487054a5a05458da13fabb3221e991cceb337b3b8b11d1df2"
+  },
+  "shuf_member1": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s1_shuf_t1.npy",
+   "sha256": "730465948cd4bc73bf3e1735e34c64693be4e0cd2b72475863492ae321c70283"
+  },
+  "shuf_member2": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s2_shuf_t1.npy",
+   "sha256": "7e6706be3a27ef1aa3eef5ca8e02f911e76e5f452948da65e1ef89afa592bed8"
+  },
+  "decoy": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_decoy_fwd_t1.npy",
+   "sha256": "6ff544aeacffc71f3d585fc736e4246c1d384d57125ecaaa6fffded9d0291373"
+  }
+ },
+ "outputs": {
+  "ensA": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_ensA.npy",
+   "sha256": "8ab78296712f3e718f7576996a7426c26d3814e451e28ba104f98c6b725a6c30"
+  },
+  "prod": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_prod.npy",
+   "sha256": "4de6da3b5533408c81abf2fe3358e12e637b94ccdaf0a59d490b9bd1ddc88301"
+  },
+  "shuf_prod": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/shuf_prod.npy",
+   "sha256": "b270740bcf84a4700f3a12d6abee64f5ad45efb816faa776579e613a7203a60c"
+  },
+  "shuf_ensA": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/shuf_ensA.npy",
+   "sha256": "324a14947529b50849bfacf4c01069a5be7bd102943d5183dd080805d1f28aa7"
+  },
+  "prodd": {
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_prodd.npy",
+   "sha256": "9f516803821a6e17a819f8a3a5a66df1f0eaa1cc30491e64a0a866655ca72d99"
+  }
+ },
+ "expect": {}
+}

@@ -1,0 +1,12 @@
+{
+    "chunk-budget-mib": 1200,
+    "debug-per-slice": false,
+    "grid-step": 64,
+    "input-level": 0,
+    "io-threads": 128,
+    "preview-every": 100,
+    "prune-min-length-px": 20.0,
+    "sparse-volume": 1,
+    "spiral-step": 20.0,
+    "verify-grid-save": false
+}

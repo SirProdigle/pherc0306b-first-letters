@@ -1,0 +1,52 @@
+{
+ "regions": [
+  "A6",
+  "w052",
+  "w053",
+  "w059",
+  "w109"
+ ],
+ "where": {
+  "A6": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_focus/renders/A_own_r41.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/fl/sqm/PHerc0306B_a306_row/auto_grown_20261012141245268",
+   "offset_yx": [
+    0,
+    0
+   ]
+  },
+  "w052": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w052.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w052/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    0
+   ]
+  },
+  "w053": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w053.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w053/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    0
+   ]
+  },
+  "w059": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_req/20261020b/F6Y/w059.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w059/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    0
+   ]
+  },
+  "w109": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_refine/trials/P5_scour_0306B/crops/p3w109_esc.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_local_lanes/PHerc0306B_z9900/out/L0306bacw/p3/flat/w109/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    800
+   ]
+  }
+ },
+ "note": "region index of training_tiles.npz -> render zarr, tifxyz mesh and the px offset of the render inside the mesh grid (check.py resolve)"
+}

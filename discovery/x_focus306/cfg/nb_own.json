@@ -1,0 +1,22 @@
+[
+ {
+  "name": "outer patch (+24 vx sheet)",
+  "tifxyz": "fl/sqm/PHerc0306B_f306_w074out/auto_grown_20261012144930979",
+  "zmap": "x_focus306/ink_maps/w074out/w074out_d0_fwd_z.npy"
+ },
+ {
+  "name": "lane w071",
+  "tifxyz": "x_vast_plan/results/PHerc0306B_z8400/results/flat/w071/tifxyz/flatten.tifxyz",
+  "zmap": "x_vast_plan/results/PHerc0306B_z8400/maps/L0306bacw_w071/L0306bacw_w071_d0_fwd_z.npy"
+ },
+ {
+  "name": "lane w072",
+  "tifxyz": "x_vast_plan/results/PHerc0306B_z8400/results/flat/w072/tifxyz/flatten.tifxyz",
+  "zmap": "x_vast_plan/results/PHerc0306B_z8400/maps/L0306bacw_w072/L0306bacw_w072_d0_fwd_z.npy"
+ },
+ {
+  "name": "lane w073",
+  "tifxyz": "x_vast_plan/results/PHerc0306B_z8400/results/flat/w073/tifxyz/flatten.tifxyz",
+  "zmap": "x_vast_plan/results/PHerc0306B_z8400/maps/L0306bacw_w073/L0306bacw_w073_d0_fwd_z.npy"
+ }
+]

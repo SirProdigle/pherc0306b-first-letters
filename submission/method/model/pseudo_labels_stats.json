@@ -1,0 +1,186 @@
+{
+ "w109": {
+  "region": "w109",
+  "bbox": [
+   192,
+   2136,
+   0,
+   3100
+  ],
+  "valid_cm2": 2.738,
+  "main": {
+   "ink_mm2": 8.3,
+   "bg_mm2": 212.7,
+   "ink_blobs": 13,
+   "ink_frac_of_labelled": 0.0375
+  },
+  "sc": {
+   "ink_mm2": 5.19,
+   "bg_mm2": 212.7,
+   "ink_blobs": 17,
+   "ink_frac_of_labelled": 0.0238
+  },
+  "decoy": {
+   "ink_mm2": 5.36,
+   "bg_mm2": 108.3,
+   "ink_blobs": 12,
+   "ink_frac_of_labelled": 0.0472
+  },
+  "r_with_fused": {
+   "v8": 0.631,
+   "v3": 0.919,
+   "trace": 0.848,
+   "rv2": 0.928
+  }
+ },
+ "_rule": {
+  "pos_t": 2.5,
+  "neg_t": 0.3,
+  "blob_mm2": [
+   0.3,
+   6.0
+  ],
+  "near_px": 20,
+  "sc_t": 1.5,
+  "decoy_mm": [
+   3.5,
+   3.0
+  ]
+ },
+ "w059": {
+  "region": "w059",
+  "bbox": [
+   64,
+   2112,
+   0,
+   4702
+  ],
+  "valid_cm2": 1.657,
+  "main": {
+   "ink_mm2": 2.72,
+   "bg_mm2": 120.5,
+   "ink_blobs": 4,
+   "ink_frac_of_labelled": 0.022
+  },
+  "sc": {
+   "ink_mm2": 1.19,
+   "bg_mm2": 120.5,
+   "ink_blobs": 4,
+   "ink_frac_of_labelled": 0.0098
+  },
+  "decoy": {
+   "ink_mm2": 1.96,
+   "bg_mm2": 63.0,
+   "ink_blobs": 3,
+   "ink_frac_of_labelled": 0.0302
+  },
+  "r_with_fused": {
+   "v8": 0.651,
+   "v3": 0.894,
+   "trace": 0.815,
+   "rv2": 0.914
+  }
+ },
+ "w053": {
+  "region": "w053",
+  "bbox": [
+   0,
+   2260,
+   64,
+   7160
+  ],
+  "valid_cm2": 2.732,
+  "main": {
+   "ink_mm2": 6.47,
+   "bg_mm2": 186.5,
+   "ink_blobs": 8,
+   "ink_frac_of_labelled": 0.0335
+  },
+  "sc": {
+   "ink_mm2": 0.1,
+   "bg_mm2": 186.5,
+   "ink_blobs": 1,
+   "ink_frac_of_labelled": 0.0005
+  },
+  "decoy": {
+   "ink_mm2": 3.41,
+   "bg_mm2": 74.6,
+   "ink_blobs": 5,
+   "ink_frac_of_labelled": 0.0437
+  },
+  "r_with_fused": {
+   "v8": 0.734,
+   "v3": 0.904,
+   "trace": 0.857,
+   "rv2": 0.909
+  }
+ },
+ "w052": {
+  "region": "w052",
+  "bbox": [
+   0,
+   2260,
+   64,
+   6940
+  ],
+  "valid_cm2": 3.36,
+  "main": {
+   "ink_mm2": 9.87,
+   "bg_mm2": 251.0,
+   "ink_blobs": 9,
+   "ink_frac_of_labelled": 0.0379
+  },
+  "sc": {
+   "ink_mm2": 2.51,
+   "bg_mm2": 251.0,
+   "ink_blobs": 10,
+   "ink_frac_of_labelled": 0.0099
+  },
+  "decoy": {
+   "ink_mm2": 6.74,
+   "bg_mm2": 110.9,
+   "ink_blobs": 7,
+   "ink_frac_of_labelled": 0.0573
+  },
+  "r_with_fused": {
+   "v8": 0.696,
+   "v3": 0.917,
+   "trace": 0.89,
+   "rv2": 0.922
+  }
+ },
+ "A6": {
+  "region": "A6",
+  "bbox": [
+   0,
+   6440,
+   0,
+   6440
+  ],
+  "valid_cm2": 16.174,
+  "main": {
+   "ink_mm2": 39.37,
+   "bg_mm2": 1188.1,
+   "ink_blobs": 38,
+   "ink_frac_of_labelled": 0.0321
+  },
+  "sc": {
+   "ink_mm2": 29.3,
+   "bg_mm2": 1188.1,
+   "ink_blobs": 40,
+   "ink_frac_of_labelled": 0.0241
+  },
+  "decoy": {
+   "ink_mm2": 18.46,
+   "bg_mm2": 708.3,
+   "ink_blobs": 39,
+   "ink_frac_of_labelled": 0.0254
+  },
+  "r_with_fused": {
+   "v8": 0.691,
+   "v3": 0.922,
+   "trace": 0.859,
+   "rv2": 0.929
+  }
+ }
+}

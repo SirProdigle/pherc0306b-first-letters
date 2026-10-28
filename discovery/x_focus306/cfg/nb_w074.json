@@ -1,0 +1,17 @@
+[
+ {
+  "name": "new fit w071",
+  "tifxyz": "x_vast_plan/results/PHerc0306B_z8400/results/flat/w071/tifxyz/flatten.tifxyz",
+  "zmap": "x_vast_plan/results/PHerc0306B_z8400/maps/L0306bacw_w071/L0306bacw_w071_d0_fwd_z.npy"
+ },
+ {
+  "name": "new fit w072",
+  "tifxyz": "x_vast_plan/results/PHerc0306B_z8400/results/flat/w072/tifxyz/flatten.tifxyz",
+  "zmap": "x_vast_plan/results/PHerc0306B_z8400/maps/L0306bacw_w072/L0306bacw_w072_d0_fwd_z.npy"
+ },
+ {
+  "name": "new fit w073",
+  "tifxyz": "x_vast_plan/results/PHerc0306B_z8400/results/flat/w073/tifxyz/flatten.tifxyz",
+  "zmap": "x_vast_plan/results/PHerc0306B_z8400/maps/L0306bacw_w073/L0306bacw_w073_d0_fwd_z.npy"
+ }
+]

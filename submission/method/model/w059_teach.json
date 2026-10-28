@@ -1,0 +1,55 @@
+{
+ "region": "w059",
+ "zarr": "/home/liam/projects/vesuvius-work/x_req/20261020b/F6Y/w059.zarr",
+ "bbox": [
+  64,
+  2112,
+  0,
+  4702
+ ],
+ "c": 20,
+ "layer0": 8,
+ "face": "fwd",
+ "zone_rule": "CT zeroed where check pad-0 rule fails (< 2.2 mm from the zone or no mesh)",
+ "models": {
+  "v3": {
+   "ckpt": "/home/liam/projects/vesuvius-work/models/community/reader-v3/reader-v3.pth",
+   "depths": [
+    -1,
+    0,
+    1
+   ],
+   "tta": "mirror4",
+   "recipe": "x_req/20261020/V3/run_maps.py map3"
+  },
+  "trace": {
+   "ckpt": "/home/liam/projects/vesuvius-work/models/community/trace/v3B_best.pth",
+   "depths": [
+    -1,
+    0,
+    1
+   ],
+   "tta": "mirror4",
+   "recipe": "x_req/20261020/V3/run_maps.py map3"
+  },
+  "rv2": {
+   "ckpt": "/home/liam/projects/vesuvius-work/models/community/reader-v2/reader-v2-step040000.pth",
+   "depths": [
+    -1,
+    0,
+    1
+   ],
+   "tta": "mirror4",
+   "recipe": "x_req/20261020/V3/run_maps.py map3"
+  },
+  "v8": {
+   "ckpt": "base",
+   "sha256": "3b94548d7f9ba9f99bc4b0ad8cafcec6d42585c06304e1bd11e47b5d0f88c4cd",
+   "tta": 1,
+   "nsig": 3,
+   "stride": 32,
+   "layers": "8..31 stored order",
+   "recipe": "aclick/bench/infer.py predict_array, tiles overlapping the pool mask only"
+  }
+ }
+}

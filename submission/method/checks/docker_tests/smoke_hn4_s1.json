@@ -1,0 +1,23 @@
+{
+ "weights_sha256": "5c2740c1f33ee5db73ca97425669607a2ffe4ae9af8b9d09d61f1c43165e60ad",
+ "tiles": 36,
+ "flips": [
+  "id"
+ ],
+ "compared_px": 1849,
+ "window_render_px": [
+  2173,
+  2216,
+  4558,
+  4601
+ ],
+ "max_abs_diff": 0.00174,
+ "mean_abs_diff": 0.00057,
+ "pearson_r": 0.99999,
+ "map_range": [
+  0.2074,
+  0.6152
+ ],
+ "cpu_seconds": 151.8,
+ "verdict": "PASS"
+}

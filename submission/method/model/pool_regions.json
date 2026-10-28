@@ -1,0 +1,8 @@
+{
+ "_note": "SELF lane pool regions (whole renders of PHerc0306B surfaces on disk). c = surface layer, v8-in reads 24 layers from layer0 = c - 12 in stored order (fwd), as P306 checked (aclick/p306/maps/order_check.json, v8_check.json). w050 (pick 2's z8400 lane winding) is left out: it is the same sheet as A6 (pick 2's own patch).",
+ "A6":   {"zarr": "/home/liam/projects/vesuvius-work/x_focus/renders/A_own_r41.zarr", "c": 20, "layer0": 8, "face": "fwd", "note": "pick 2 own-sheet patch a306_row, whole render (P306 region p2 is its row)"},
+ "w052": {"zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w052.zarr", "c": 20, "layer0": 8, "face": "fwd", "note": "z8400 lane w052, whole render"},
+ "w053": {"zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w053.zarr", "c": 20, "layer0": 8, "face": "fwd", "note": "z8400 lane w053, whole render"},
+ "w059": {"zarr": "/home/liam/projects/vesuvius-work/x_req/20261020b/F6Y/w059.zarr", "c": 20, "layer0": 8, "face": "fwd", "note": "z8400 lane w059 (F6Y render), whole render"},
+ "w109": {"zarr": "/home/liam/projects/vesuvius-work/x_refine/trials/P5_scour_0306B/crops/p3w109_esc.zarr", "c": 15, "layer0": 3, "face": "fwd", "note": "z9900 P3 lane w109, crop p3w109_esc (31 layers), whole crop"}
+}

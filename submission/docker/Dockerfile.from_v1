@@ -1,0 +1,46 @@
+# Dockerfile.from_v1 : the LOCAL build of the claim image on our machine (version 2: fl-claim-a2; ... version 7: fl-claim-a7), offline.
+# The package Dockerfile's first instructions (up to the zlib-ng layer) are v1's Dockerfile verbatim. BuildKit's cache of those
+# layers no longer exists on this machine (pruned), and rebuilding them would download apt packages, torch, the pip set and the
+# checkpoints again. So the test image starts FROM v1's own image (fl-claim-a:final), whose layers ARE those instructions' output,
+# and adds the package Dockerfile's tail below unchanged (build.sh checks that it is identical). Built with --network none.
+# v1's own files under /opt/fl stay in the lower layers; no v2 code path reads them (v2: /opt/fl/claim, /opt/fl/data, /opt/fl/mesh,
+# /opt/fl/third_party/v8in, and x_zoom/zoomlib.py + x_research2/speed/fastink.py, which are v1's identical files).
+ARG V1_IMAGE=fl-claim-a:final
+FROM ${V1_IMAGE}
+# v8-in: our ink8um loader (modeling.py, inference.py, config.json) and the released base weights (Hugging Face
+# YoussefMoNader/ink-8um-v8in, model.safetensors), from the context and sha256-checked.
+# v8Q, used only in reading-aid views: v8-in fine-tuned on PHerc1447 w058 + PHerc0343 tracings (no PHerc0306B data)
+ARG V8_SHA256=3b94548d7f9ba9f99bc4b0ad8cafcec6d42585c06304e1bd11e47b5d0f88c4cd
+ARG V8Q_SHA256=4cb8e9217e5fba795cc0d7fc53afd998ad82c6c5d1250cdb9e63008f36a8f305
+COPY v8in/ /opt/fl/third_party/v8in/
+RUN echo "${V8_SHA256}  /opt/fl/third_party/v8in/model.safetensors" | sha256sum -c --quiet && echo "v8-in weights OK" \
+ && echo "${V8Q_SHA256}  /opt/fl/third_party/v8in/v8Q_final.safetensors" | sha256sum -c --quiet && echo "v8Q weights OK"
+
+# Reader V3 (Hugging Face domenicor046/reader-v3 at revision 39f626e5, MIT), also in the context: Dockerfile.from_v1 builds on our
+# first version's image, whose checkpoint layer predates V3. This build already has it from checkpoints.tsv (same file, same check).
+ARG READER_V3_SHA256=ea405417450abd8ace1b8ff79ebce3adb646c5e48ab95da46844d77efe984d8a
+COPY reader-v3/reader-v3.pth /opt/fl/models/community/reader-v3/reader-v3.pth
+COPY checkpoints.tsv /opt/fl/env/checkpoints.tsv
+RUN echo "${READER_V3_SHA256}  /opt/fl/models/community/reader-v3/reader-v3.pth" | sha256sum -c --quiet && echo "Reader V3 weights OK"
+
+# A-hn, the three seeds of our v8-in fine-tune, sha256-checked. finalist.json names them; mode 'smoke' re-runs them on data/smoke/crop.npz
+COPY finalist/ /opt/fl/third_party/v8in/finalist/
+RUN sha256sum -c --quiet /opt/fl/third_party/v8in/finalist/SHA256SUMS && echo "version-7 model weights OK"
+# mode 'train': the training code at the paths it ran from, its registries, the exclusion zone and the pool meshes; the CT renders
+# and labels are mounted at run time (train/INPUTS.tsv); links.tsv points the code at weights already here
+COPY train/ /opt/fl/train/
+RUN mkdir -p /home/liam/projects/vesuvius-work && cp -r /opt/fl/train/W/. /home/liam/projects/vesuvius-work/ \
+ && TAB="$(printf '\t')" && while IFS="$TAB" read -r p t; do case "$p" in ''|\#*) continue;; esac; \
+      mkdir -p "$(dirname /home/liam/projects/vesuvius-work/$p)"; ln -sfn "$t" "/home/liam/projects/vesuvius-work/$p"; done < /opt/fl/train/links.tsv \
+ && chmod -R a+rwX /home/liam/projects && echo "training tree OK"
+
+# the inputs of the images: the shipped per-model maps (data/maps/fwd_*.npy on the render raster, 4900 x 7780 float16), the A-hn
+# members (data/members/), the CT surface layer (ct20.png), and every view with its sha256 (data/final/)
+COPY data/ /opt/fl/data/
+# code (claim image, ink steps, compare, entrypoint, ink libraries) and the claim mesh
+COPY code/ /opt/fl/
+COPY mesh/ /opt/fl/mesh/
+RUN cd /opt/fl && sha256sum -c --quiet data/inputs.sha256 && echo "inputs sha256 OK"
+WORKDIR /out
+ENTRYPOINT ["bash", "/opt/fl/claim/run.sh"]
+CMD ["final"]

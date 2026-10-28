@@ -1,0 +1,17 @@
+# top-level packages (fl/remote/setup.sh list, the environment the claim maps were made in on 2026-10-12);
+# exact versions come from constraints.txt (a freeze of the development environment, envs/vcpy, Python 3.14.7)
+zarr
+numpy
+tifffile
+timm
+einops
+fsspec
+aiohttp
+huggingface_hub
+numcodecs
+opencv-python-headless
+scipy
+safetensors
+requests
+pynrrd
+imagecodecs

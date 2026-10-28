@@ -1,0 +1,43 @@
+{
+ "n_cells": 12045,
+ "edges_u_vx_p5_p50_p95": [
+  19.49,
+  19.9,
+  20.13
+ ],
+ "edges_v_vx_p5_p50_p95": [
+  19.47,
+  19.99,
+  20.35
+ ],
+ "stretch_u_p5_p50_p95": [
+  0.975,
+  0.995,
+  1.006
+ ],
+ "stretch_v_p5_p50_p95": [
+  0.974,
+  1.0,
+  1.018
+ ],
+ "area_ratio_p5_p50_p95": [
+  0.955,
+  0.993,
+  1.019
+ ],
+ "grid_angle_deg_p5_p50_p95": [
+  88.63,
+  89.94,
+  91.49
+ ],
+ "share_cells_stretch_off_more_than_5pct": 0.0134,
+ "share_cells_area_off_more_than_10pct": 0.0039,
+ "scope": "cells whose centre lies inside the claim box",
+ "box_mm": {
+  "u0": -15.0,
+  "u1": 23.0,
+  "v0": -6.84,
+  "v1": 2.72
+ },
+ "invalid_cells_in_box": 0
+}

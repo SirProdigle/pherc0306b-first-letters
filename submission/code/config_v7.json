@@ -1,0 +1,603 @@
+{
+ "name": "version 7 candidate v7_trace_x_Ahn_product: main image = TRACE v3B x v8-306H3 (per-pixel product of the two models' ink probabilities (1667 rule)); version 4c's box; blank control R",
+ "tag": "v7_trace_x_Ahn_product",
+ "base_package": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v5/build/v5_C3",
+ "texts": {
+  "mesh_note": "own-sheet GrowPatch + CT-driven touch-up at the right end of the line, re-flattened",
+  "status": "version 7 (TRACE v3B x v8-306H3, product rule; claim box of version 4c, drawn by the team leader on the model image)",
+  "script": "code/make_claim_image_v2.py + code/claimlib_v2.py (version 7, config code/config_v7.json)",
+  "footer_note": ""
+ },
+ "mesh": {
+  "name": "PHerc0306B_20250521133212_w074own_touchup_V5Rc",
+  "dir": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/SUBMISSION_v4c_owner_only/mesh/PHerc0306B_20250521133212_w074own_touchup_V5Rc"
+ },
+ "ct": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/ct20.png",
+ "models": {
+  "rv2": {
+   "name": "Reader v2",
+   "map": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/fwd_rv2.npy",
+   "recipe": "Reader v2 (HF domenicor046/reader-v2 step 40000): villa inference, overlap 0.5, 8-fold dihedral TTA, mean of depths -1/0/+1 around layer 20, face fwd"
+  },
+  "tr": {
+   "name": "TRACE v3B",
+   "map": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/fwd_tr.npy",
+   "recipe": "TRACE v3B (GitHub Jashann/vesuvius-scrolling v1.0): as Reader v2"
+  },
+  "v8": {
+   "name": "v8-in",
+   "map": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/fwd_v8.npy",
+   "recipe": "v8-in base (HF YoussefMoNader/ink-8um-v8in, model.safetensors sha256 3b94548d...c4cd): 24 layers 8..31 (window centred on layer 20, delta 0), stored order (asc), clip 200, 64 px tiles at stride 21 admitted at >= 25 % CT coverage, mirror4 TTA, fp16, Gaussian (+-1 sigma) stitch divided by the weight SUM"
+  },
+  "v8q": {
+   "name": "v8Q",
+   "map": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/fwd_v8q.npy",
+   "recipe": "v8Q = v8-in base fine-tuned by lane P2 on PHerc1447 w058 (team labels) + PHerc0343 (jeff-j-chen tracings) 1:1, 300 steps, NO PHerc0306B data (ckpt sha256 4cb8e921...f305); inference exactly as v8-in base"
+  },
+  "v3": {
+   "name": "Reader V3",
+   "map": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/fwd_v3.npy",
+   "recipe": "Reader V3 (HF domenicor046/reader-v3, reader-v3.pth sha256 ea405417...4d8a, MIT; trained on no eligible scroll): as Reader v2"
+  },
+  "v8g3": {
+   "name": "v8-in",
+   "map": "/home/liam/projects/vesuvius-work/x_refine/trials/P2_inkft_0306B/maps/V5Rc_ctx_base_dl0_asc_g3_fullraster.npy",
+   "recipe": "v8-in base (HF YoussefMoNader/ink-8um-v8in, model.safetensors sha256 3b94548d...c4cd), the organisers' public model, trained without PHerc0306B: the same pass as the v8-in map above (24 layers 8..31, delta 0, asc, clip 200, 64 px tiles at stride 21, >= 25 % CT coverage, mirror4 TTA, fp16), stitched with a Gaussian (+-3 sigma) window divided by the weight SUM, which removes the 21 px tile seams of the +-1 sigma window"
+  },
+  "prod": {
+   "name": "TRACE v3B x v8-306H3",
+   "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_prod.npy",
+   "rule": "per-pixel product of the two models' ink probabilities (1667 rule)",
+   "recipe": "TRACE v3B x v8-306H3: per-pixel product of the two models' ink probabilities (1667 rule); TRACE v3B as in version 5; v8-306H3 = mean of three v8-in fine-tunes by us (seeds 0, 1, 2; each 600 steps x 16 tiles on PHerc1447 w058 + w060 team labels plus PHerc0306B machine labels from four cleared models on 26.7 cm2 of other surfaces outside the exclusion zone, as model A, with hard negatives: the loss weight of every labelled background pixel is 1 + 4 x the model's own ink probability there) (ckpt sha256 9a281284...7009, 5c2740c1...60ad, a294716b...8ce7), each at TTA 1; inference as v8-in base: 24 render layers 8..31 (window centred on layer 20) in stored order (asc), clip 200, 64 px tiles at stride 21 from (115, 694) admitted at >= 25 % CT coverage, fp16, Gaussian (+-3 sigma) stitch divided by the weight SUM (= version 5's v8g3 recipe, P3/m306/eval/code/render_leadA.py = v5 code/ink_v8.py --nsig 3)"
+  },
+  "ensA": {
+   "name": "v8-306H3",
+   "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_ensA.npy",
+   "recipe": "v8-306H3 = mean of three v8-in fine-tunes by us (seeds 0, 1, 2; each 600 steps x 16 tiles on PHerc1447 w058 + w060 team labels plus PHerc0306B machine labels from four cleared models on 26.7 cm2 of other surfaces outside the exclusion zone, as model A, with hard negatives: the loss weight of every labelled background pixel is 1 + 4 x the model's own ink probability there) (ckpt sha256 9a281284...7009, 5c2740c1...60ad, a294716b...8ce7), each at TTA 1; inference as v8-in base: 24 render layers 8..31 (window centred on layer 20) in stored order (asc), clip 200, 64 px tiles at stride 21 from (115, 694) admitted at >= 25 % CT coverage, fp16, Gaussian (+-3 sigma) stitch divided by the weight SUM (= version 5's v8g3 recipe, P3/m306/eval/code/render_leadA.py = v5 code/ink_v8.py --nsig 3)"
+  },
+  "prodd": {
+   "name": "TRACE v3B x DECOY",
+   "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_prodd.npy",
+   "rule": "per-pixel product of the two models' ink probabilities (1667 rule); CONTROL: the decoy model, its machine labels moved 3.5 x 3.0 mm",
+   "recipe": "control: TRACE v3B x hn4_decoy (b9cd0cbb...), the same training with every machine label moved 3.5 x 3.0 mm"
+  }
+ },
+ "pairs": {
+  "rt": [
+   "rv2",
+   "tr"
+  ],
+  "rv8": [
+   "rv2",
+   "v8"
+  ],
+  "rv8q": [
+   "rv2",
+   "v8q"
+  ],
+  "v3": [
+   "v3"
+  ],
+  "v3t": [
+   "v3",
+   "tr"
+  ],
+  "v3q": [
+   "v3",
+   "v8q"
+  ],
+  "c3": [
+   "tr",
+   "v8g3"
+  ],
+  "v8g3": [
+   "v8g3"
+  ],
+  "tr": [
+   "tr"
+  ],
+  "c6": [
+   "prod"
+  ],
+  "c6a": [
+   "ensA"
+  ],
+  "c6z": [
+   "tr",
+   "ensA"
+  ],
+  "ctl_decoy": [
+   "prodd"
+  ]
+ },
+ "box": {
+  "u0": -15.0,
+  "u1": 23.0,
+  "v0": -6.84,
+  "v1": 2.72
+ },
+ "big_box": {
+  "u0": -16.0,
+  "u1": 26.0,
+  "v0": -12.0,
+  "v1": 5.0
+ },
+ "blank_control": {
+  "short": "blank control R",
+  "name": "R, right of the box (BLANK_CONTROL_PREREG.md, BLANK_CONTROL_RESULT.md; flagged: CT sheet contrast 0.48 of the line's, below the 0.5 bar; faint marks at the levels of two text rows in every view)",
+  "u0": 25.0,
+  "u1": 30.0,
+  "v0": -20.0,
+  "v1": 3.0
+ },
+ "blank_reported": {
+  "old_strip": {
+   "u0": -11.2,
+   "u1": 28.8,
+   "v0": 6.0,
+   "v1": 15.0
+  }
+ },
+ "views": [
+  {
+   "key": "c6_grey",
+   "view": "1",
+   "pair": "c6",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "TRACE_x_v8306H3_grey_page",
+   "lead": true
+  },
+  {
+   "key": "c6_threshold",
+   "view": "2",
+   "pair": "c6",
+   "display": "threshold",
+   "rung": "secondary",
+   "bg": "ct",
+   "file": "TRACE_x_v8306H3_secondary_rung_L050",
+   "file_by_rung": {
+    "primary": "TRACE_x_v8306H3_primary",
+    "secondary": "TRACE_x_v8306H3_secondary_rung_L050"
+   }
+  },
+  {
+   "key": "c6a_grey",
+   "view": "3",
+   "pair": "c6a",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "v8306H3_grey_page"
+  },
+  {
+   "key": "c6z_grey",
+   "view": "3b",
+   "pair": "c6z",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "TRACE_plus_v8306H3_grey_page"
+  },
+  {
+   "key": "ctl_decoy_grey",
+   "view": "ctl",
+   "pair": "ctl_decoy",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "CONTROL_TRACE_x_DECOY_grey_page"
+  },
+  {
+   "key": "c3_grey",
+   "view": "5-1",
+   "pair": "c3",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "TRACE_v8in_grey_page"
+  },
+  {
+   "key": "c3_threshold",
+   "view": "5-2",
+   "pair": "c3",
+   "display": "threshold",
+   "rung": "secondary",
+   "bg": "ct",
+   "file": "TRACE_v8in_secondary_rung_L050"
+  },
+  {
+   "key": "v8g3_grey",
+   "view": "5-3",
+   "pair": "v8g3",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "v8in_grey_page"
+  },
+  {
+   "key": "tr_grey",
+   "view": "5-3b",
+   "pair": "tr",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "TRACE_grey_page"
+  },
+  {
+   "key": "v3t_grey",
+   "view": "5-4c-1",
+   "pair": "v3t",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "V3_TRACE_grey_page"
+  },
+  {
+   "key": "v3t_secondary",
+   "view": "5-4c-2",
+   "pair": "v3t",
+   "display": "threshold",
+   "rung": "secondary",
+   "bg": "ct",
+   "file": "V3_TRACE_secondary_rung_L050"
+  },
+  {
+   "key": "v3_grey",
+   "view": "5-4c-3",
+   "pair": "v3",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "V3_grey_page"
+  },
+  {
+   "key": "v3q_grey",
+   "view": "5-4c-3b",
+   "pair": "v3q",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "V3_v8Q_grey_page"
+  },
+  {
+   "key": "rt_primary",
+   "view": "5-v2-1",
+   "pair": "rt",
+   "display": "threshold",
+   "rung": "primary",
+   "bg": "ct",
+   "file": "Rv2_TRACE_primary"
+  },
+  {
+   "key": "rt_secondary",
+   "view": "5-v2-2",
+   "pair": "rt",
+   "display": "threshold",
+   "rung": "secondary",
+   "bg": "ct",
+   "file": "Rv2_TRACE_secondary_rung_L050"
+  },
+  {
+   "key": "rv8_secondary",
+   "view": "5-v2-3",
+   "pair": "rv8",
+   "display": "threshold",
+   "rung": "secondary",
+   "bg": "ct",
+   "file": "Rv2_v8in_secondary_rung_L050"
+  },
+  {
+   "key": "rv8_primary",
+   "view": "5-v2-",
+   "pair": "rv8",
+   "display": "threshold",
+   "rung": "primary",
+   "bg": "ct",
+   "file": "Rv2_v8in_primary"
+  },
+  {
+   "key": "rv8q_secondary",
+   "view": "5-v2-4",
+   "pair": "rv8q",
+   "display": "threshold",
+   "rung": "secondary",
+   "bg": "ct",
+   "file": "Rv2_v8Q_secondary_rung_L050"
+  },
+  {
+   "key": "rv8q_grey",
+   "view": "5-v2-5",
+   "pair": "rv8q",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "Rv2_v8Q_grey_page"
+  },
+  {
+   "key": "rt_grey",
+   "view": "5-v2-6",
+   "pair": "rt",
+   "display": "grey",
+   "rung": "primary",
+   "bg": "page",
+   "file": "Rv2_TRACE_grey_page"
+  }
+ ],
+ "context_view": {
+  "pair": "c6",
+  "file": "TRACE_x_v8306H3_grey_page_context_7cm2_both_boxes"
+ },
+ "controls": {
+  "pairs": [
+   "c6",
+   "c6a",
+   "c6z",
+   "ctl_decoy",
+   "c3",
+   "v8g3",
+   "tr",
+   "v3t",
+   "v3",
+   "rt"
+  ]
+ },
+ "shuffle_maps": {
+  "v3": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/v4c_work/shuf_maps/fwd_v3.npy",
+  "tr": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/v4c_work/shuf_maps/fwd_tr.npy",
+  "rv2": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/v4c_work/shuf_maps/fwd_rv2.npy",
+  "v8g3": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v5/gpu/shuf_maps/fwd_v8g3.npy",
+  "prod": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/shuf_prod.npy",
+  "ensA": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/shuf_ensA.npy"
+ },
+ "box_count": {
+  "check": [
+   "rv2",
+   "v3"
+  ],
+  "boxes": {
+   "v5": {
+    "u0": -15.0,
+    "u1": 23.0,
+    "v0": -6.84,
+    "v1": 2.72
+   },
+   "v4": {
+    "u0": -15.0,
+    "u1": 25.0,
+    "v0": -5.0,
+    "v1": 4.875
+   }
+  },
+  "lost_vs": "v4",
+  "note": "main view = the lead (TRACE v3B x v8-306H3); check view Reader v2 + Reader V3, which share neither weights nor lineage with TRACE v3B or the v8-in family (as version 5)"
+ },
+ "letters": {
+  "label": "/home/liam/projects/vesuvius-work/x_followup/A_label/papyrologist_label3_conservative_2026-10-16.png"
+ },
+ "side_by_side": [
+  [
+   "<MESH>",
+   "Main image: TRACE v3B x v8-306H3 (product of probabilities), grey rule"
+  ],
+  [
+   "@c6_threshold",
+   "TRACE v3B x v8-306H3, threshold rule (rung by the blank-control rule)"
+  ],
+  [
+   "@c6a_grey",
+   "v8-306H3 alone, grey rule"
+  ],
+  [
+   "@c3_grey",
+   "TRACE v3B + v8-in, grey rule (version 5 main image)"
+  ],
+  [
+   "@ctl_decoy_grey",
+   "CONTROL: TRACE v3B x the decoy model (labels moved), grey rule"
+  ]
+ ],
+ "overlay": {
+  "models_txt": "TRACE v3B x v8-306H3 (product)"
+ },
+ "mirror_control": true,
+ "dry_run": false,
+ "finalist": {
+  "name": "v7_trace_x_Ahn_product",
+  "lane": "self",
+  "fusion": "product",
+  "status": "review",
+  "display": "v8-306H3",
+  "file_stem": "v8306H3",
+  "recipe_short": "mean of three v8-in fine-tunes by us (seeds 0, 1, 2; each 600 steps x 16 tiles on PHerc1447 w058 + w060 team labels plus PHerc0306B machine labels from four cleared models on 26.7 cm2 of other surfaces outside the exclusion zone, as model A, with hard negatives: the loss weight of every labelled background pixel is 1 + 4 x the model's own ink probability there)",
+  "rule": "per-pixel product of the two models' ink probabilities (1667 rule)",
+  "members": [
+   {
+    "name": "hn4_s0",
+    "ckpt": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0/final/model.safetensors",
+    "sha256": "9a2812843924c50cafaa2b598f62c92ceca9f0d1f5d05b7bbf25764814ec7009",
+    "seed": 0,
+    "run_dir": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0",
+    "run_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0/config_train.json",
+    "train_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+    "trainer": "cloud_code/train_cloud_hn.py (rented GPU, from the zone-checked SELF packs)",
+    "trainer_path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py",
+    "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s0_fwd_t1.npy",
+    "shuf_map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s0_shuf_t1.npy",
+    "known": {
+     "f9h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s0_d0_k-f9h_t1.npy",
+     "n841h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s0_d0_k-n841h_t1.npy"
+    }
+   },
+   {
+    "name": "hn4_s1",
+    "ckpt": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s1/final/model.safetensors",
+    "sha256": "5c2740c1f33ee5db73ca97425669607a2ffe4ae9af8b9d09d61f1c43165e60ad",
+    "seed": 1,
+    "run_dir": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s1",
+    "run_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s1/config_train.json",
+    "train_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s1.json",
+    "trainer": "cloud_code/train_cloud_hn.py (rented GPU, from the zone-checked SELF packs)",
+    "trainer_path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py",
+    "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s1_fwd_t1.npy",
+    "shuf_map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s1_shuf_t1.npy",
+    "known": {
+     "f9h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s1_d0_k-f9h_t1.npy",
+     "n841h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s1_d0_k-n841h_t1.npy"
+    }
+   },
+   {
+    "name": "hn4_s2",
+    "ckpt": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s2/final/model.safetensors",
+    "sha256": "a294716b083769e8116d5f8d3cfa6a09378ca5c7e51c32225d04703266ad8ce7",
+    "seed": 2,
+    "run_dir": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s2",
+    "run_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s2/config_train.json",
+    "train_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s2.json",
+    "trainer": "cloud_code/train_cloud_hn.py (rented GPU, from the zone-checked SELF packs)",
+    "trainer_path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py",
+    "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s2_fwd_t1.npy",
+    "shuf_map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_s2_shuf_t1.npy",
+    "known": {
+     "f9h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s2_d0_k-f9h_t1.npy",
+     "n841h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s2_d0_k-n841h_t1.npy"
+    }
+   }
+  ],
+  "ckpts": [
+   {
+    "role": "member hn4_s0 (seed 0)",
+    "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0/final/model.safetensors",
+    "sha256": "9a2812843924c50cafaa2b598f62c92ceca9f0d1f5d05b7bbf25764814ec7009"
+   },
+   {
+    "role": "member hn4_s1 (seed 1)",
+    "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s1/final/model.safetensors",
+    "sha256": "5c2740c1f33ee5db73ca97425669607a2ffe4ae9af8b9d09d61f1c43165e60ad"
+   },
+   {
+    "role": "member hn4_s2 (seed 2)",
+    "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s2/final/model.safetensors",
+    "sha256": "a294716b083769e8116d5f8d3cfa6a09378ca5c7e51c32225d04703266ad8ce7"
+   }
+  ],
+  "stages": [
+   {
+    "role": "hn4_s0 step 300 (mid-training)",
+    "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0/step_0300/model.safetensors",
+    "sha256": "2de6354e0ec2a410129077de842b6e746f96093b1a01a41d252eba2c1add3279"
+   },
+   {
+    "role": "hn4_s1 step 300 (mid-training)",
+    "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s1/step_0300/model.safetensors",
+    "sha256": "79e5c3e8b969d69e59cf6f0ebe906bd2d1ed5ebc514084f5d802909f94c86c84"
+   },
+   {
+    "role": "hn4_s2 step 300 (mid-training)",
+    "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s2/step_0300/model.safetensors",
+    "sha256": "3c5a687c447c1c487a46bfe637b4847e2204b59b547cbf2151b99b9bf41d7884"
+   }
+  ],
+  "decoy": {
+   "name": "hn4_decoy",
+   "ckpt": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_decoy/final/model.safetensors",
+   "sha256": "b9cd0cbb61df991e2489c79bf085df1f1954143379abff044a641063ae31a1fe",
+   "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/members/hn4_decoy_fwd_t1.npy",
+   "run_dir": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_decoy",
+   "train_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_decoy.json",
+   "trainer": "cloud_code/train_cloud_hn.py (rented GPU, from the zone-checked SELF packs)",
+   "trainer_path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py"
+  },
+  "trace_map": "/home/liam/projects/vesuvius-work/x_req/20261020/A_V3/maps/fwd_tr.npy",
+  "trace_shuf_map": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/v4c_work/shuf_maps/fwd_tr.npy",
+  "fused_dir": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused",
+  "map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_prod.npy",
+  "shuf_map": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/shuf_prod.npy",
+  "expect": {
+   "tta": 1,
+   "order": "asc",
+   "nsig": 3,
+   "stride": 21,
+   "region": "ctx"
+  },
+  "eval_name": "hn4_s0",
+  "ens_known": "",
+  "ens_known_key": "",
+  "known_product": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/known_product.json",
+  "train_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+  "run_dir": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0",
+  "decoy_eval_name": null,
+  "nopl_eval_name": null,
+  "data_sources": [
+   "1447_w058",
+   "1447_w060",
+   "0306B_pool_pseudo"
+  ],
+  "dry_run": false,
+  "selection_note": "The team leader chose this image on 23 Oct after comparing it side by side with the same rule on model A before the hard-negative retraining, and with version 5's image of the same line. It keeps the same strokes with a slightly cleaner background, and it passes every check below. The held-out numbers are a no-harm check.",
+  "selection_note_is_draft": false,
+  "decoy_note": "TRACE v3B x the decoy model (the same hard-negative training with every machine label moved 3.5 x 3.0 mm) still shows the letter shapes, which come from TRACE v3B, but blurrier and with more background specks than the main image (`supplementary/ctrl_panel_v7.jpg`, `supplementary/CONTROL_TRACE_x_DECOY_grey_page.png`)",
+  "source": "coordinator 23 Oct ~13:10 (m306/coord/claim_hn_check.py, out/claim_hn_check.json; visual check of TRACE x A-hn vs v6 and the decoy)",
+  "decoy_note_is_draft": false,
+  "extra_training_code": [
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/v8306lib.py",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/cloud_box_hn.sh",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/prep_box_dn.sh",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/arms.txt",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s1.json",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s2.json",
+   "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_decoy.json"
+  ],
+  "model_plain": "model A-hn (model A retrained to mark less blank papyrus as ink)",
+  "mode": "product",
+  "model_key": "prod",
+  "lead_models": "TRACE v3B x v8-306H3"
+ },
+ "controls_panel": {
+  "file": "ctrl_panel_v7",
+  "rows": [
+   [
+    "Main image: TRACE v3B x v8-306H3",
+    "c6",
+    "view"
+   ],
+   [
+    "Main image",
+    "c6",
+    "shuffle"
+   ],
+   [
+    "CONTROL: TRACE v3B x DECOY model",
+    "ctl_decoy",
+    "view"
+   ],
+   [
+    "Version 5 (C3): TRACE v3B + v8-in",
+    "c3",
+    "view"
+   ]
+  ]
+ },
+ "rung_decisions": {
+  "c6_threshold": {
+   "primary_painted": 0.022,
+   "primary_half_tone": 0.00019,
+   "rung": "secondary",
+   "levels_primary": {
+    "L": 2.608,
+    "H": 7.45,
+    "P": 8.792,
+    "frac": 0.35
+   },
+   "control": {
+    "u0": 25.0,
+    "u1": 30.0,
+    "v0": -20.0,
+    "v1": 3.0
+   }
+  }
+ }
+}

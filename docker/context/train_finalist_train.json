@@ -1,0 +1,78 @@
+{
+ "lane": "self",
+ "name": "v7_trace_x_Ahn_product",
+ "train_config": ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+ "run_name": "hn4_s0",
+ "ckpt_sha256": "9a2812843924c50cafaa2b598f62c92ceca9f0d1f5d05b7bbf25764814ec7009",
+ "steps": [
+  "pool",
+  "teachers",
+  "labels",
+  "exclusion",
+  "train",
+  "leadA"
+ ],
+ "code": [
+  ".claude/worktrees/leadA-push3/x_push3/aclick/p306/exclusion/check.py",
+  ".claude/worktrees/leadA-push3/x_push3/aclick/p306/exclusion/build_zone.py",
+  ".claude/worktrees/leadA-push3/x_push3/aclick/p306/exclusion/zone.json",
+  ".claude/worktrees/leadA-push3/x_push3/aclick/p306/exclusion/zone.npz",
+  ".claude/worktrees/leadA-push3/x_push3/aclick/p306/exclusion/renders.json",
+  ".claude/worktrees/leadA-push3/x_push3/aclick/bench/infer.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/eval/code/render_leadA.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/train/v8306lib.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/train/train_v8306.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/code/pool.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/code/masks.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/code/teachers.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/code/labels.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/code/train_self.py",
+  "x_req/20261020/V3/run_maps.py",
+  "x_research2/speed/fastink.py",
+  ".claude/worktrees/leadA-push3/x_push3/aclick/p306/regions.json",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/pool/regions_pool.json",
+  "fl/sqm/PHerc0306B_a306_row/auto_grown_20261012141245268",
+  "x_vast_plan/results/PHerc0306B_z8400/results/flat/w052/tifxyz/flatten.tifxyz",
+  "x_vast_plan/results/PHerc0306B_z8400/results/flat/w053/tifxyz/flatten.tifxyz",
+  "x_vast_plan/results/PHerc0306B_z8400/results/flat/w059/tifxyz/flatten.tifxyz",
+  "x_local_lanes/PHerc0306B_z9900/out/L0306bacw/p3/flat/w109/tifxyz/flatten.tifxyz",
+  "x_refine/trials/P5_scour_0306B/crops/p3w109_esc.zarr/crop.json",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s1.json",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s2.json",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_decoy.json",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/code/train_cloud.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/self/code/make_packs.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/v8306lib.py",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/cloud_box_hn.sh",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/prep_box_dn.sh",
+  ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/arms.txt"
+ ],
+ "P3": ".claude/worktrees/leadA-push3/x_push3",
+ "fusion": "product",
+ "members": [
+  {
+   "name": "hn4_s0",
+   "train_config": ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+   "sha256": "9a2812843924c50cafaa2b598f62c92ceca9f0d1f5d05b7bbf25764814ec7009",
+   "seed": 0,
+   "trainer": ".claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py"
+  },
+  {
+   "name": "hn4_s1",
+   "train_config": ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s1.json",
+   "sha256": "5c2740c1f33ee5db73ca97425669607a2ffe4ae9af8b9d09d61f1c43165e60ad",
+   "seed": 1,
+   "trainer": ".claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py"
+  },
+  {
+   "name": "hn4_s2",
+   "train_config": ".claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s2.json",
+   "sha256": "a294716b083769e8116d5f8d3cfa6a09378ca5c7e51c32225d04703266ad8ce7",
+   "seed": 2,
+   "trainer": ".claude/worktrees/leadA-push3/x_push3/m306/denoise/cloud_code/train_cloud_hn.py"
+  }
+ ]
+}

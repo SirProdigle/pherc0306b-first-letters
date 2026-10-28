@@ -1,0 +1,50 @@
+{
+ "1447_w058": {
+  "what": "PHerc1447 surface w058: 24 render layers + team refined ink labels and mask (8.64 um, 116 keV, the same protocol as PHerc0306B)",
+  "used_as": "training labels (anchor)",
+  "source": "Hugging Face dataset YoussefMoNader/ink-8um-pherc1447-surfaces, revision 7e4d918712a8d8642a6fdeee45b80217c1e98317",
+  "licence": "CC BY-NC 4.0",
+  "attribution": "Vesuvius Challenge (PHerc. 1447 scan, renders and labels; Youssef Nader et al.)",
+  "local": [
+   "W/data/pherc1447/w058"
+  ],
+  "manifest": "W/data/pherc1447/SHA256SUMS",
+  "redistribute": "public dataset: cite it by revision; no need to re-host"
+ },
+ "1447_w060": {
+  "what": "PHerc1447 surface w060: 24 render layers + team refined ink labels and mask (8.64 um, 116 keV)",
+  "used_as": "training labels (anchor)",
+  "source": "Hugging Face dataset YoussefMoNader/ink-8um-pherc1447-surfaces, revision 7e4d918712a8d8642a6fdeee45b80217c1e98317",
+  "licence": "CC BY-NC 4.0",
+  "attribution": "Vesuvius Challenge (PHerc. 1447 scan, renders and labels; Youssef Nader et al.)",
+  "local": [
+   "W/data/pherc1447/w060"
+  ],
+  "manifest": "W/data/pherc1447/SHA256SUMS",
+  "redistribute": "public dataset: cite it by revision; no need to re-host"
+ },
+ "0306B_pool_pseudo": {
+  "what": "PHerc0306B 20250521133212 CT on 5 surfaces of OTHER rows and windings (A6 = an own-sheet patch on another row, z8400 lanes w052, w053, w059, z9900 lane w109; 26.7 cm2 pool), every training tile >= 2.0 + 0.2 + 0.7 mm in 3-D from the exclusion zone; machine labels (pseudo-labels) from the mean z-score of four cleared models (base v8-in, Reader V3, TRACE v3B, Reader v2; no Hecate)",
+  "used_as": "training labels (machine labels; every stage is released with the package)",
+  "source": "our renders of the public volume on our meshes; our label code (P3/m306/self/code)",
+  "licence": "scan CC BY-NC 4.0 (Vesuvius Challenge); our renders, teacher maps and machine labels CC BY-NC-SA 4.0 (ShareAlike, because TRACE v3B, one of the four teachers, has CC BY-NC-SA 4.0 weights)",
+  "attribution": "Vesuvius Challenge (scan); teachers: Youssef Nader (v8-in, MIT), domenicor046 (Reader V3 and Reader v2, MIT), Jashann (TRACE v3B: code MIT, weights CC BY-NC-SA 4.0 as stated in its v1.0 release)",
+  "local": [
+   "P3/m306/self/pool",
+   "P3/m306/self/teach",
+   "P3/m306/self/labels"
+  ],
+  "redistribute": "ours; released with the rest of the training data and weights"
+ },
+ "v8in_base": {
+  "what": "v8-in base weights (the starting point of every model we trained, and one of the four teachers)",
+  "source": "Hugging Face YoussefMoNader/ink-8um-v8in, model.safetensors",
+  "sha256": "3b94548d7f9ba9f99bc4b0ad8cafcec6d42585c06304e1bd11e47b5d0f88c4cd",
+  "licence": "MIT",
+  "attribution": "Youssef Nader / Vesuvius Challenge",
+  "local": [
+   "W/third_party/v8in/model.safetensors"
+  ],
+  "redistribute": "public: cite"
+ }
+}

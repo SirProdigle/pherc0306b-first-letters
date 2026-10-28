@@ -1,0 +1,127 @@
+{
+ "schema": "make_claim_image_v2/1",
+ "status": "version 7 (TRACE v3B x v8-306H3, product rule; claim box of version 4c, drawn by the team leader on the model image)",
+ "scroll": "PHerc. 0306B",
+ "volume_id": "20250521133212",
+ "voxel_size_um": 8.64,
+ "mesh": {
+  "name": "PHerc0306B_20250521133212_w074own_touchup_V5Rc",
+  "files": {
+   "x.tif": "e6f14ec22d3c5cf2b37836cbb9141bae08c55b5bc1f89f4e07c202d424d64c29",
+   "y.tif": "60d0807ee8574cdc39f9710b9866f1c3a3e6f611357cd611e17f8deb39fd1c42",
+   "z.tif": "243d236048a9bb04293bae77473740d479824cc551ed67a355b21199f9bd0596",
+   "meta.json": "6fbf2200e1ac55a6cef7232ee4d9098919dc8185b9204e9ea08017e58f0c1ac1"
+  }
+ },
+ "orientation": "reading orientation = the render flipped top-to-bottom (image row r <-> v = +15 - r / K mm)",
+ "frame": "claim frame (u, v) mm, v down as rendered; render px (x, y) = ((u + 36) K, (v + 21) K), K = 115.741 px/mm",
+ "context_mm": {
+  "u0": -30.0,
+  "u1": 30.0,
+  "v0": -20.0,
+  "v1": 15.0
+ },
+ "claim_box_mm": {
+  "u0": -15.0,
+  "u1": 23.0,
+  "v0": -6.84,
+  "v1": 2.72
+ },
+ "claim_box_size_mm": [
+  38.0,
+  9.56
+ ],
+ "claim_box_area_cm2": {
+  "flat": 3.6328,
+  "mesh3d": 3.6033
+ },
+ "claim_box_image_px": {
+  "x0": 1956,
+  "x1": 6354,
+  "y0": 1616,
+  "y1": 2722
+ },
+ "image_px": {
+  "width": 7385,
+  "height": 4417,
+  "map_left": 220,
+  "map_top": 195,
+  "map_w": 6945,
+  "map_h": 4051
+ },
+ "px_per_mm": 115.741,
+ "ink": {
+  "pair": "c6",
+  "models": [
+   "TRACE v3B x v8-306H3"
+  ],
+  "maps": {
+   "prod": {
+    "file": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/v7/maps/v7_trace_x_Ahn_product/fused/fwd_prod.npy",
+    "sha256": "4de6da3b5533408c81abf2fe3358e12e637b94ccdaf0a59d490b9bd1ddc88301"
+   }
+  },
+  "recipes": {
+   "rv2": "Reader v2 (HF domenicor046/reader-v2 step 40000): villa inference, overlap 0.5, 8-fold dihedral TTA, mean of depths -1/0/+1 around layer 20, face fwd",
+   "tr": "TRACE v3B (GitHub Jashann/vesuvius-scrolling v1.0): as Reader v2",
+   "v8": "v8-in base (HF YoussefMoNader/ink-8um-v8in, model.safetensors sha256 3b94548d...c4cd): 24 layers 8..31 (window centred on layer 20, delta 0), stored order (asc), clip 200, 64 px tiles at stride 21 admitted at >= 25 % CT coverage, mirror4 TTA, fp16, Gaussian (+-1 sigma) stitch divided by the weight SUM",
+   "v8q": "v8Q = v8-in base fine-tuned by lane P2 on PHerc1447 w058 (team labels) + PHerc0343 (jeff-j-chen tracings) 1:1, 300 steps, NO PHerc0306B data (ckpt sha256 4cb8e921...f305); inference exactly as v8-in base",
+   "v3": "Reader V3 (HF domenicor046/reader-v3, reader-v3.pth sha256 ea405417...4d8a, MIT; trained on no eligible scroll): as Reader v2",
+   "v8g3": "v8-in base (HF YoussefMoNader/ink-8um-v8in, model.safetensors sha256 3b94548d...c4cd), the organisers' public model, trained without PHerc0306B: the same pass as the v8-in map above (24 layers 8..31, delta 0, asc, clip 200, 64 px tiles at stride 21, >= 25 % CT coverage, mirror4 TTA, fp16), stitched with a Gaussian (+-3 sigma) window divided by the weight SUM, which removes the 21 px tile seams of the +-1 sigma window",
+   "prod": "TRACE v3B x v8-306H3: per-pixel product of the two models' ink probabilities (1667 rule); TRACE v3B as in version 5; v8-306H3 = mean of three v8-in fine-tunes by us (seeds 0, 1, 2; each 600 steps x 16 tiles on PHerc1447 w058 + w060 team labels plus PHerc0306B machine labels from four cleared models on 26.7 cm2 of other surfaces outside the exclusion zone, as model A, with hard negatives: the loss weight of every labelled background pixel is 1 + 4 x the model's own ink probability there) (ckpt sha256 9a281284...7009, 5c2740c1...60ad, a294716b...8ce7), each at TTA 1; inference as v8-in base: 24 render layers 8..31 (window centred on layer 20) in stored order (asc), clip 200, 64 px tiles at stride 21 from (115, 694) admitted at >= 25 % CT coverage, fp16, Gaussian (+-3 sigma) stitch divided by the weight SUM (= version 5's v8g3 recipe, P3/m306/eval/code/render_leadA.py = v5 code/ink_v8.py --nsig 3)",
+   "ensA": "v8-306H3 = mean of three v8-in fine-tunes by us (seeds 0, 1, 2; each 600 steps x 16 tiles on PHerc1447 w058 + w060 team labels plus PHerc0306B machine labels from four cleared models on 26.7 cm2 of other surfaces outside the exclusion zone, as model A, with hard negatives: the loss weight of every labelled background pixel is 1 + 4 x the model's own ink probability there) (ckpt sha256 9a281284...7009, 5c2740c1...60ad, a294716b...8ce7), each at TTA 1; inference as v8-in base: 24 render layers 8..31 (window centred on layer 20) in stored order (asc), clip 200, 64 px tiles at stride 21 from (115, 694) admitted at >= 25 % CT coverage, fp16, Gaussian (+-3 sigma) stitch divided by the weight SUM (= version 5's v8g3 recipe, P3/m306/eval/code/render_leadA.py = v5 code/ink_v8.py --nsig 3)",
+   "prodd": "control: TRACE v3B x hn4_decoy (b9cd0cbb...), the same training with every machine label moved 3.5 x 3.0 mm"
+  },
+  "fusion": "mean of per-model z-scores; each model z-scored over the on-sheet pixels of the context view"
+ },
+ "ct": {
+  "file": "/home/liam/projects/vesuvius-work/x_refine/trials/P1_surface_refine/ink/P1V5Rc/ct20.png",
+  "sha256": "e28222dd5d67b3ca10ad863f7426342e744618d9a3b5549aac7a03a47bc1ea63",
+  "layer": 20
+ },
+ "display": {
+  "kind": "grey",
+  "bg": "page",
+  "rule": "d = clip((z - lo)/(hi - lo), 0, 1); lo = median, hi = p99.9 of fused z over the on-sheet pixels of the shown area (context); no threshold",
+  "pixel": "pixel = bg*(1-d) + INK*d; bg = PAGE (no CT); off-sheet blue-grey",
+  "rung": null,
+  "levels": {
+   "lo_median": -0.317,
+   "hi_p999": 7.961
+  },
+  "page_rgb": [
+   243.0,
+   236.0,
+   222.0
+  ],
+  "ink_rgb": [
+   22.0,
+   20.0,
+   18.0
+  ],
+  "fixed_in_advance": "x_refine/trials/I1_display_read/PREREG.md, Amendment 6 (grey view), written before the panels"
+ },
+ "rows": {
+  "method": "row profile of displayed ink (d >= 0.5) inside the box, smoothed 0.6 mm, peaks >= 3 mm apart; ticks 1.6 mm below the row centre, in the side margins only",
+  "centre_y_image_px": [
+   1869,
+   2406
+  ]
+ },
+ "visible_share_box": 0.7557,
+ "full_tone_share_box": 0.0191,
+ "half_tone_share_box": 0.0858,
+ "p99_tone_box": 0.9384,
+ "image_sha256": "48df135d02b2c5babde055b122e17bd828a11de50f2878c00bbc8ce5357087df",
+ "script": "code/make_claim_image_v2.py + code/claimlib_v2.py (version 7, config code/config_v7.json)",
+ "variant": {
+  "key": "c6_grey",
+  "view": "1",
+  "pair": "c6",
+  "display": "grey",
+  "rung": "primary",
+  "bg": "page",
+  "file": "TRACE_x_v8306H3_grey_page",
+  "lead": true
+ }
+}

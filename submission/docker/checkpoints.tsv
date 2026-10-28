@@ -1,0 +1,6 @@
+# path-under-FL_ROOT  source(pinned-revision-or-release)  sha256   -- all public; none trained or fine-tuned by us
+models/community/reader-v2/reader-v2-step040000.pth https://huggingface.co/domenicor046/reader-v2/resolve/72633d8aa6d40e9e737ccea4c9928fbc624dab45/reader-v2-step040000.pth 654ec5acec2b6c4788d9cb326e2f0b8c2c730584949a934ef775db7f6ab5d3a6
+models/community/trace/v3B_best.pth https://github.com/Jashann/vesuvius-scrolling/releases/download/v1.0/v3B_best.pth 812ffe2b42b3293974052ebbee60a0fe939ca2bfc3f03a517a0bc2e2339e5da2
+models/ink9_ens/hecate_9.6um.pth https://huggingface.co/scrollprize/hecate/resolve/9cb86e500e944b11a06a7020403cde5dffb5bcb2/hecate_9.6um.pth 809f4f10f7cb7afa19b4bee0f7d2ab31edd7e11b664f9f210cc9c17f22fcfe5d
+models/ink9_ens/hecate.py https://huggingface.co/scrollprize/hecate/resolve/9cb86e500e944b11a06a7020403cde5dffb5bcb2/hecate.py c232c18a1a86cfb91257a00db13288202bb8ae33732ba26f7291a9b8adb8da59
+models/community/reader-v3/reader-v3.pth https://huggingface.co/domenicor046/reader-v3/resolve/39f626e595304c35c6ef574ffc0b6cc1e0ed44cb/reader-v3.pth ea405417450abd8ace1b8ff79ebce3adb646c5e48ab95da46844d77efe984d8a

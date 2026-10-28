@@ -1,0 +1,65 @@
+{
+ "created": "2026-10-21",
+ "lane": "P306",
+ "units": "PHerc0306B 20250521133212 voxels (8.64 um), columns x,y,z",
+ "buffer_mm_applied_by_check": 2.0,
+ "densify": 4,
+ "margin_mm": 2.0,
+ "sources": [
+  {
+   "mesh": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/PHerc0306B_w074_claim_v4c/mesh/PHerc0306B_20250521133212_w074own_touchup_V5Rc",
+   "x_tif_sha256": "e6f14ec22d3c5cf2b37836cbb9141bae08c55b5bc1f89f4e07c202d424d64c29",
+   "versions": "v2, v3, v4, v4b, v4c, v5 (C1/C3/H)",
+   "window_mm": {
+    "u0": -30,
+    "u1": 30,
+    "v0": -20,
+    "v1": 15
+   },
+   "points": 1254679,
+   "note": "claim frame u=-36+x/K, v=-21+y/K; render px = grid/scale"
+  },
+  {
+   "mesh": "/home/liam/projects/vesuvius-work/CANDIDATES/SUBMISSION_FINAL_PHerc0306B/mesh/PHerc0306B_20250521133212_w074own_auto_grown_20261012144243662",
+   "x_tif_sha256": "831220311c68877751ef702d39e8746224902014fac5956616e74e33720eefc8",
+   "versions": "v1 (14 Oct)",
+   "window_mm": {
+    "u0": -34,
+    "u1": 30,
+    "v0": -20,
+    "v1": 18
+   },
+   "points": 1131335,
+   "levelling": {
+    "centre_render_px": [
+     2727.0161382924634,
+     2825.2282391046297
+    ],
+    "line_dir": [
+     0.9171081972118806,
+     -0.398638375732661
+    ],
+    "down_dir": [
+     0.398638375732661,
+     0.9171081972118806
+    ],
+    "note": "u along the line, v down as rendered; image y = -v"
+   },
+   "note": "superset of the v1 view (u -24..16, v -11..8) and a 60 x 36 mm context"
+  }
+ ],
+ "n_points": 2386014,
+ "bbox_xyz": [
+  [
+   2751.903076171875,
+   2069.7958984375,
+   7208.84619140625
+  ],
+  [
+   6265.58740234375,
+   5822.00439453125,
+   11976.31640625
+  ]
+ ],
+ "zone_npz_sha256": "833da5dfaf5ff94f5c884ac9d0352befb1c7d271716fbca318ae5afb0e05b062"
+}

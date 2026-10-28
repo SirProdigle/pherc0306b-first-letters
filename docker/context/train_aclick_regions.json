@@ -1,0 +1,8 @@
+{
+ "_note": "P306 candidate regions on PHerc0306B outside the A-click exclusion zone. roi = y0, y1, x0, x1 in render px. c = surface layer (render layer index). face: fwd = stored layer order (as lead A's v8-in/V3 recipes). v8-in reads 24 layers layer0 = c - 12 (asc).",
+ "p2": {"name": "pick 2 row (own-sheet patch a306_row)", "zarr": "/home/liam/projects/vesuvius-work/x_focus/renders/A_own_r41.zarr", "roi": [2200, 4300, 1600, 5000], "c": 20, "layers": 41, "face": "fwd", "layer0": 8, "reverse": false},
+ "w052": {"name": "z8400 lane w052 lower row", "zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w052.zarr", "roi": [1150, 1950, 3200, 6400], "c": 20, "layers": 41, "face": "fwd", "layer0": 8, "reverse": false},
+ "w053": {"name": "z8400 lane w053 two bands", "zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w053.zarr", "roi": [950, 1850, 3500, 6800], "c": 20, "layers": 41, "face": "fwd", "layer0": 8, "reverse": false},
+ "w059": {"name": "z8400 lane w059 band (F6Y)", "zarr": "/home/liam/projects/vesuvius-work/x_req/20261020b/F6Y/w059.zarr", "roi": [414, 1937, 3252, 6772], "c": 20, "layers": 41, "face": "fwd", "layer0": 8, "reverse": false},
+ "w109": {"name": "z9900 P3 lane w109 two rows (crop p3w109_esc)", "zarr": "/home/liam/projects/vesuvius-work/x_refine/trials/P5_scour_0306B/crops/p3w109_esc.zarr", "roi": [250, 1850, 150, 2150], "c": 15, "layers": 31, "face": "fwd", "layer0": 3, "reverse": false}
+}

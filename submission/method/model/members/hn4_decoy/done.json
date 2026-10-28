@@ -1,0 +1,7 @@
+{
+ "name": "hn4_decoy",
+ "steps": 600,
+ "final": "/work/self/runs/hn4_decoy/final",
+ "sha256": "b9cd0cbb61df991e2489c79bf085df1f1954143379abff044a641063ae31a1fe",
+ "minutes_this_chunk": 12.4
+}

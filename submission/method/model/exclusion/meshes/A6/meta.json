@@ -1,0 +1,44 @@
+{
+    "area_cm2": 31.595727082692235,
+    "area_vx2": 42325376.923238166,
+    "bbox": [
+        [
+            3255.554443359375,
+            2363.09228515625,
+            5452.25634765625
+        ],
+        [
+            6285.10986328125,
+            5429.7265625,
+            13168.2177734375
+        ]
+    ],
+    "elapsed_time_s": 437.24994287,
+    "format": "tifxyz",
+    "max_gen": 160,
+    "scale": [
+        0.05000000074505806,
+        0.05000000074505806
+    ],
+    "seed": [
+        4258.0,
+        3512.0,
+        9149.0
+    ],
+    "source": "vc_grow_seg_from_seed",
+    "target_volume": "20250521133212-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+    "type": "seg",
+    "uuid": "auto_grown_20261012141245268",
+    "vc_gsfs_mode": "explicit_seed",
+    "vc_gsfs_params": {
+        "cache_size": 4000000000,
+        "generations": 160,
+        "min_area_cm": 0.5,
+        "mode": "seed",
+        "normal_grid_path": "/home/liam/projects/vesuvius-work/fl/PHerc0306B/ngrid_remote",
+        "step_size": 20,
+        "thread_limit": 4,
+        "voxelsize": 8.64
+    },
+    "vc_gsfs_version": "dev"
+}

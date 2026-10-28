@@ -1,0 +1,40 @@
+{
+ "Main image: TRACE v3B x v8-306H3": {
+  "pair": "c6",
+  "kind": "view",
+  "levels": {
+   "lo_median": -0.3168,
+   "hi_p999": 7.9607
+  },
+  "box_half_tone": 0.08583,
+  "blank_half_tone": 0.00423
+ },
+ "Main image": {
+  "pair": "c6",
+  "kind": "shuffle",
+  "box_half_tone_shuffled": 0.0,
+  "box_painted_shuffled": 0.01849,
+  "p99_shuffled": 0.0092,
+  "box_half_tone_real": 0.08583
+ },
+ "CONTROL: TRACE v3B x DECOY model": {
+  "pair": "ctl_decoy",
+  "kind": "view",
+  "levels": {
+   "lo_median": -0.316,
+   "hi_p999": 7.6522
+  },
+  "box_half_tone": 0.0845,
+  "blank_half_tone": 0.00213
+ },
+ "Version 5 (C3): TRACE v3B + v8-in": {
+  "pair": "c3",
+  "kind": "view",
+  "levels": {
+   "lo_median": -0.2356,
+   "hi_p999": 5.0365
+  },
+  "box_half_tone": 0.10573,
+  "blank_half_tone": 0.00573
+ }
+}

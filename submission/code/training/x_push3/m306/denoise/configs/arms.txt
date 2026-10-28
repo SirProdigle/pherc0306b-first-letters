@@ -1,0 +1,8 @@
+hn4_s0
+hn4_s1
+hn4_s2
+hn2_s0
+hn8_s0
+hn4p_s0
+hn4_decoy
+hn4B_s0

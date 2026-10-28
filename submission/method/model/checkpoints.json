@@ -1,0 +1,48 @@
+{
+ "base": {
+  "name": "v8-in base (HF YoussefMoNader/ink-8um-v8in)",
+  "sha256": "3b94548d7f9ba9f99bc4b0ad8cafcec6d42585c06304e1bd11e47b5d0f88c4cd"
+ },
+ "finalist": [
+  {
+   "role": "member hn4_s0 (seed 0)",
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0/final/model.safetensors",
+   "sha256": "9a2812843924c50cafaa2b598f62c92ceca9f0d1f5d05b7bbf25764814ec7009",
+   "bytes": 333532180
+  },
+  {
+   "role": "member hn4_s1 (seed 1)",
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s1/final/model.safetensors",
+   "sha256": "5c2740c1f33ee5db73ca97425669607a2ffe4ae9af8b9d09d61f1c43165e60ad",
+   "bytes": 333532180
+  },
+  {
+   "role": "member hn4_s2 (seed 2)",
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s2/final/model.safetensors",
+   "sha256": "a294716b083769e8116d5f8d3cfa6a09378ca5c7e51c32225d04703266ad8ce7",
+   "bytes": 333532180
+  }
+ ],
+ "stages": [
+  {
+   "role": "hn4_s0 step 300 (mid-training)",
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s0/step_0300/model.safetensors",
+   "sha256": "2de6354e0ec2a410129077de842b6e746f96093b1a01a41d252eba2c1add3279",
+   "bytes": 333532180
+  },
+  {
+   "role": "hn4_s1 step 300 (mid-training)",
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s1/step_0300/model.safetensors",
+   "sha256": "79e5c3e8b969d69e59cf6f0ebe906bd2d1ed5ebc514084f5d802909f94c86c84",
+   "bytes": 333532180
+  },
+  {
+   "role": "hn4_s2 step 300 (mid-training)",
+   "path": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/runs/hn4_s2/step_0300/model.safetensors",
+   "sha256": "3c5a687c447c1c487a46bfe637b4847e2204b59b547cbf2151b99b9bf41d7884",
+   "bytes": 333532180
+  }
+ ],
+ "map": null,
+ "shuffle_map": null
+}

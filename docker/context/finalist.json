@@ -1,0 +1,33 @@
+{
+ "name": "v7_trace_x_Ahn_product",
+ "display": "v8-306H3",
+ "tta": 1,
+ "lane": "self",
+ "dry_run": false,
+ "fusion": "product",
+ "train_config": "hn4_s0.json",
+ "members": [
+  {
+   "name": "hn4_s0",
+   "seed": 0,
+   "file": "hn4_s0.safetensors",
+   "sha256": "9a2812843924c50cafaa2b598f62c92ceca9f0d1f5d05b7bbf25764814ec7009"
+  },
+  {
+   "name": "hn4_s1",
+   "seed": 1,
+   "file": "hn4_s1.safetensors",
+   "sha256": "5c2740c1f33ee5db73ca97425669607a2ffe4ae9af8b9d09d61f1c43165e60ad"
+  },
+  {
+   "name": "hn4_s2",
+   "seed": 2,
+   "file": "hn4_s2.safetensors",
+   "sha256": "a294716b083769e8116d5f8d3cfa6a09378ca5c7e51c32225d04703266ad8ce7"
+  }
+ ],
+ "decoy": {
+  "name": "hn4_decoy",
+  "sha256": "b9cd0cbb61df991e2489c79bf085df1f1954143379abff044a641063ae31a1fe"
+ }
+}

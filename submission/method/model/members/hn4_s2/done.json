@@ -1,0 +1,7 @@
+{
+ "name": "hn4_s2",
+ "steps": 600,
+ "final": "/work/self/runs/hn4_s2/final",
+ "sha256": "a294716b083769e8116d5f8d3cfa6a09378ca5c7e51c32225d04703266ad8ce7",
+ "minutes_this_chunk": 12.2
+}

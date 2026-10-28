@@ -1,0 +1,56 @@
+{
+ "bbox": [
+  [
+   3077.65283203125,
+   2417.91015625,
+   8739.017578125
+  ],
+  [
+   5932.28564453125,
+   4735.3291015625,
+   10531.2744140625
+  ]
+ ],
+ "format": "tifxyz",
+ "scale": [
+  0.05000000074505806,
+  0.05000000074505806
+ ],
+ "source": "code/surface: touchup.py (CT-driven right-end touch-up of lead A own-sheet GrowPatch) + reflatten.py (fold-weighted ARAP)",
+ "target_volume": "20250521133212-surface-20260413222639-surface-m7-L0-th0.2.zarr",
+ "type": "seg",
+ "uuid": "PHerc0306B_20250521133212_w074own_touchup_V5Rc_region",
+ "vc_gsfs_version": "dev",
+ "name": "PHerc0306B_20250521133212_w074own_touchup_V5Rc_region",
+ "p1": {
+  "rule": "original except where lanes z8400/z8400o (or z9900) w074 and the m7 track agree within 4 vx and the original is > 4 vx off"
+ },
+ "p1_reflatten": {
+  "source": "V5R_rightend = code/surface/touchup.py output (original A + right-end touch-up)",
+  "region_uv_mm": [
+   -31.0,
+   31.0,
+   -21.0,
+   16.0
+  ],
+  "anchor_uv_mm": [
+   -10.0,
+   8.0,
+   -2.5,
+   2.5
+  ],
+  "iters": 60,
+  "fold_weight": 0.02,
+  "fold_thr": 1.25,
+  "method": "ARAP (local/global, cotangent weights) on the grid triangulation, Procrustes-aligned to the old (u,v) on the anchor, barycentric resampling on the same carrier grid"
+ },
+ "derived_from": {
+  "growpatch": "PHerc0306B_20250521133212_w074own_auto_grown_20261012144243662 (v1 mesh; seed 3559, 3224, 9348)",
+  "frame": "claim-frame carrier grid: node (i, j) <-> (u, v) = (-36 + 0.1728 j, -21 + 0.1728 i) mm; 20 vx per cell; scale-1 render px (x, y) <-> (u, v) = (-36 + x / 115.741, -21 + y / 115.741) mm; v down as rendered"
+ },
+ "grid_offset": [
+  69,
+  109
+ ],
+ "note": "grid rows 69:151, cols 109:355 of PHerc0306B_20250521133212_w074own_touchup_V5Rc (the claim box + 2 mm); a scale-1 render of this cut lands at render px (2180, 1380) of the whole mesh"
+}

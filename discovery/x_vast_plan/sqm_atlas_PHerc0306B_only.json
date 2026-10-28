@@ -1,0 +1,122 @@
+[
+ {
+  "scroll": "PHerc0306B",
+  "volume_id": "20250521133212",
+  "voxel_um": 8.64,
+  "protocol": "8.64 um, 116 keV",
+  "blocks": 615,
+  "support_blocks_excluded": 18,
+  "median_quality": 0.30044960618439237,
+  "share_clear": 0.14796747967479676,
+  "share_hazy": 0.6325203252032521,
+  "best_band_z": 9216,
+  "best_band_median": 0.42255237132805523,
+  "profile": [
+   {
+    "z": 0,
+    "blocks": 1,
+    "median_quality": 0.007826551408975549
+   },
+   {
+    "z": 768,
+    "blocks": 3,
+    "median_quality": 0.3060783630802473
+   },
+   {
+    "z": 1536,
+    "blocks": 12,
+    "median_quality": 0.3117802814218077
+   },
+   {
+    "z": 2304,
+    "blocks": 23,
+    "median_quality": 0.3643620201038285
+   },
+   {
+    "z": 3072,
+    "blocks": 37,
+    "median_quality": 0.38809241631241503
+   },
+   {
+    "z": 3840,
+    "blocks": 49,
+    "median_quality": 0.35539754232665194
+   },
+   {
+    "z": 4608,
+    "blocks": 48,
+    "median_quality": 0.36550702458477335
+   },
+   {
+    "z": 5376,
+    "blocks": 49,
+    "median_quality": 0.294758974861066
+   },
+   {
+    "z": 6144,
+    "blocks": 47,
+    "median_quality": 0.15050953725917138
+   },
+   {
+    "z": 6912,
+    "blocks": 40,
+    "median_quality": 0.3315977544186727
+   },
+   {
+    "z": 7680,
+    "blocks": 36,
+    "median_quality": 0.3258026398139717
+   },
+   {
+    "z": 8448,
+    "blocks": 35,
+    "median_quality": 0.39986696905622426
+   },
+   {
+    "z": 9216,
+    "blocks": 35,
+    "median_quality": 0.42255237132805523
+   },
+   {
+    "z": 9984,
+    "blocks": 38,
+    "median_quality": 0.3143516809595171
+   },
+   {
+    "z": 10752,
+    "blocks": 36,
+    "median_quality": 0.32379948912576384
+   },
+   {
+    "z": 11520,
+    "blocks": 33,
+    "median_quality": 0.20290943232802117
+   },
+   {
+    "z": 12288,
+    "blocks": 36,
+    "median_quality": 0.15689820410244892
+   },
+   {
+    "z": 13056,
+    "blocks": 28,
+    "median_quality": 0.1837199833952204
+   },
+   {
+    "z": 13824,
+    "blocks": 21,
+    "median_quality": 0.1818068635408706
+   },
+   {
+    "z": 14592,
+    "blocks": 6,
+    "median_quality": 0.19644207360846855
+   },
+   {
+    "z": 15360,
+    "blocks": 2,
+    "median_quality": 0.21927115464650557
+   }
+  ]
+ }
+]

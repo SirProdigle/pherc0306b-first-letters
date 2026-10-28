@@ -1,0 +1,17 @@
+{
+ "base": {
+  "name": "base",
+  "kind": "v8",
+  "train": "released v8-in (HF YoussefMoNader/ink-8um-v8in; organisers; no PHerc1447, no PHerc0306B)",
+  "f9h": "0.869 / 0.740 / 0.130 / 0.665 / 0.683",
+  "n841h": "0.840 / 0.674 / 0.121 / 0.782 / 0.783",
+  "w060": "0.805 / 0.698 / 0.241 / 0.828 / 0.509",
+  "w058": "—",
+  "w062": "r 0.818 / 0.956; AUC 0.988",
+  "shuffle": "0.0006 / 0.0000",
+  "blankR": "0.1910 (v8-in 0.1910) / 0.0057 (C3 0.0057)",
+  "flags": "shuffle OK, R OK",
+  "sheets": "out/ab/AB_base_alone.jpg",
+  "updated": "2026-10-22 18:59:34"
+ }
+}

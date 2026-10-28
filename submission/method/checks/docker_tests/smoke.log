@@ -1,0 +1,79 @@
+[0s] smoke: member hn4_s0 (sha256 9a2812843924) on the CT crop, CPU fp32, TTA 1, vs its shipped map
+Loading weights from local directory
+{
+ "weights_sha256": "9a2812843924c50cafaa2b598f62c92ceca9f0d1f5d05b7bbf25764814ec7009",
+ "tiles": 36,
+ "flips": [
+  "id"
+ ],
+ "compared_px": 1849,
+ "window_render_px": [
+  2173,
+  2216,
+  4558,
+  4601
+ ],
+ "max_abs_diff": 0.00149,
+ "mean_abs_diff": 0.000633,
+ "pearson_r": 0.999996,
+ "map_range": [
+  0.2554,
+  0.6987
+ ],
+ "cpu_seconds": 148.0,
+ "verdict": "PASS"
+}
+[153s] smoke: member hn4_s1 (sha256 5c2740c1f33e) on the CT crop, CPU fp32, TTA 1, vs its shipped map
+Loading weights from local directory
+{
+ "weights_sha256": "5c2740c1f33ee5db73ca97425669607a2ffe4ae9af8b9d09d61f1c43165e60ad",
+ "tiles": 36,
+ "flips": [
+  "id"
+ ],
+ "compared_px": 1849,
+ "window_render_px": [
+  2173,
+  2216,
+  4558,
+  4601
+ ],
+ "max_abs_diff": 0.00174,
+ "mean_abs_diff": 0.00057,
+ "pearson_r": 0.99999,
+ "map_range": [
+  0.2074,
+  0.6152
+ ],
+ "cpu_seconds": 151.8,
+ "verdict": "PASS"
+}
+[309s] smoke: member hn4_s2 (sha256 a294716b0837) on the CT crop, CPU fp32, TTA 1, vs its shipped map
+Loading weights from local directory
+{
+ "weights_sha256": "a294716b083769e8116d5f8d3cfa6a09378ca5c7e51c32225d04703266ad8ce7",
+ "tiles": 36,
+ "flips": [
+  "id"
+ ],
+ "compared_px": 1849,
+ "window_render_px": [
+  2173,
+  2216,
+  4558,
+  4601
+ ],
+ "max_abs_diff": 0.00141,
+ "mean_abs_diff": 0.000641,
+ "pearson_r": 0.999998,
+ "map_range": [
+  0.3337,
+  0.7783
+ ],
+ "cpu_seconds": 141.0,
+ "verdict": "PASS"
+}
+[455s] smoke: the product rule rebuilt from the shipped maps (fuse_v7.py), byte for byte
+{"ensA": true, "prod": true, "prodd": true, "shuf_prod": true, "shuf_ensA": true}
+[459s] smoke: PASS (every member + the fusion)
+[459s] smoke done (rc 0)

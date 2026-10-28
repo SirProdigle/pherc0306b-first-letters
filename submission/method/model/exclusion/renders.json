@@ -1,0 +1,152 @@
+{
+ "/home/liam/projects/vesuvius-work/x_focus306/renders/w050.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w050/tifxyz/flatten.tifxyz",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "pick 2, z8400 lane w050, 41 layers, surface 20",
+  "canvas": [
+   2280,
+   6640
+  ],
+  "grid_over_scale": [
+   2280,
+   6640
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_focus306/renders/w052.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w052/tifxyz/flatten.tifxyz",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "z8400 lane w052, 41 layers, surface 20",
+  "canvas": [
+   2260,
+   6940
+  ],
+  "grid_over_scale": [
+   2260,
+   6940
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_focus306/renders/w053.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w053/tifxyz/flatten.tifxyz",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "z8400 lane w053, 41 layers, surface 20",
+  "canvas": [
+   2260,
+   7160
+  ],
+  "grid_over_scale": [
+   2260,
+   7160
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_focus306/renders/w074.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w074/tifxyz/flatten.tifxyz",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "LEAD A lane render (zone test only)",
+  "canvas": [
+   2560,
+   10180
+  ],
+  "grid_over_scale": [
+   2560,
+   10180
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_req/20261020b/F6Y/w059.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w059/tifxyz/flatten.tifxyz",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "z8400 lane w059 (F6Y), 41 layers, surface 20",
+  "canvas": [
+   2220,
+   8100
+  ],
+  "grid_over_scale": [
+   2220,
+   8100
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_focus306/renders/w074own.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/fl/sqm/PHerc0306B_f306_w074own/auto_grown_20261012144243662",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "LEAD A v1 mesh render (zone test only)",
+  "canvas": [
+   5640,
+   5640
+  ],
+  "grid_over_scale": [
+   5640,
+   5640
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_focus/renders/A_own_r41.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/fl/sqm/PHerc0306B_a306_row/auto_grown_20261012141245268",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "pick 2 own patch, 41 layers, surface 20",
+  "canvas": [
+   6440,
+   6440
+  ],
+  "grid_over_scale": [
+   6440,
+   6440
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_refine/trials/P1_surface_refine/renders/P1V5Rc.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/PHerc0306B_w074_claim_v4c/mesh/PHerc0306B_20250521133212_w074own_touchup_V5Rc",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "LEAD A V5Rc render (zone test only)",
+  "canvas": [
+   4900,
+   7780
+  ],
+  "grid_over_scale": [
+   4900,
+   7780
+  ],
+  "canvas_matches": true
+ },
+ "/home/liam/projects/vesuvius-work/x_local_lanes/PHerc0306B_z9900/out/L0306bacw/p3/renders/L0306bacw_w109.zarr": {
+  "mesh": "/home/liam/projects/vesuvius-work/x_local_lanes/PHerc0306B_z9900/out/L0306bacw/p3/flat/w109/tifxyz/flatten.tifxyz",
+  "offset_yx": [
+   0,
+   0
+  ],
+  "note": "z9900 P3 lane w109, 31 layers, surface 15 (level 0 removed; crop p3w109_esc.zarr exists)",
+  "canvas": null,
+  "grid_over_scale": [
+   2440,
+   16620
+  ],
+  "canvas_matches": null
+ }
+}

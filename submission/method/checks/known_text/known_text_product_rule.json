@@ -1,0 +1,134 @@
+{
+ "sources": {
+  "TRACE v3B": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/self/ref_trace/known",
+  "base v8-in": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/eval/cands/base/known",
+  "self_main": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/eval/cands/self_main/known",
+  "self_main_s1": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/self/known_cloud/self_main_s1",
+  "self_main_s2": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/self/known_cloud/self_main_s2",
+  "members": {
+   "hn4_s0": {
+    "f9h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s0_d0_k-f9h_t1.npy",
+    "n841h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s0_d0_k-n841h_t1.npy"
+   },
+   "hn4_s1": {
+    "f9h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s1_d0_k-f9h_t1.npy",
+    "n841h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s1_d0_k-n841h_t1.npy"
+   },
+   "hn4_s2": {
+    "f9h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s2_d0_k-f9h_t1.npy",
+    "n841h": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/maps/raw_dnt/hn4_s2_d0_k-n841h_t1.npy"
+   }
+  }
+ },
+ "note": "The M306 evaluator's known-text maps share one grid per set (m306/eval/code/known.py crops), for v8-family and Reader-family models alike, so the claim's fusion rule can be scored directly: TRACE v3B (Reader recipe, run_maps.map3, mirror4), the members' maps (TTA 1, +-3 sigma), A = their mean, and the product TRACE x A; for reference TRACE x base v8-in and TRACE x model A before the hard-negative retraining (the mean of self_main seeds 0, 1, 2).  Scored with the evaluator's own known.score (AUC / AP / false ink at 80 % centre-line recall / faint recall / stroke width).  Correction (23 Oct): PHerc0841 is held out for every model here. PHerc0009B is not held out for TRACE v3B, which lists PHerc0009B in its training data (as do Reader v2 and Reader V3), so for rows containing TRACE v3B the PHerc0009B scores are a reference only.",
+ "scores": {
+  "TRACE v3B": {
+   "f9h": {
+    "auc": 0.9121,
+    "ap": 0.8023,
+    "fi_skel80": 0.0242,
+    "faint_recall": 0.6402,
+    "fwhm_mm": NaN,
+    "auc_skel_far": 0.962
+   },
+   "n841h": {
+    "auc": 0.8696,
+    "ap": 0.7128,
+    "fi_skel80": 0.0853,
+    "faint_recall": 0.7407,
+    "fwhm_mm": 0.7282,
+    "auc_skel_far": 0.9191
+   }
+  },
+  "base v8-in": {
+   "f9h": {
+    "auc": 0.8693,
+    "ap": 0.7403,
+    "fi_skel80": 0.1298,
+    "faint_recall": 0.6645,
+    "fwhm_mm": 0.6833,
+    "auc_skel_far": 0.9118
+   },
+   "n841h": {
+    "auc": 0.8404,
+    "ap": 0.6738,
+    "fi_skel80": 0.1207,
+    "faint_recall": 0.7822,
+    "fwhm_mm": 0.7833,
+    "auc_skel_far": 0.9069
+   }
+  },
+  "A = mean of the three member seeds": {
+   "f9h": {
+    "auc": 0.8787,
+    "ap": 0.7618,
+    "fi_skel80": 0.0947,
+    "faint_recall": 0.6685,
+    "fwhm_mm": 0.607,
+    "auc_skel_far": 0.9263
+   },
+   "n841h": {
+    "auc": 0.8448,
+    "ap": 0.6993,
+    "fi_skel80": 0.1226,
+    "faint_recall": 0.7775,
+    "fwhm_mm": 0.7138,
+    "auc_skel_far": 0.9041
+   }
+  },
+  "TRACE v3B x base v8-in (product)": {
+   "f9h": {
+    "auc": 0.9053,
+    "ap": 0.8027,
+    "fi_skel80": 0.0342,
+    "faint_recall": 0.6433,
+    "fwhm_mm": 0.6489,
+    "auc_skel_far": 0.948
+   },
+   "n841h": {
+    "auc": 0.8709,
+    "ap": 0.7268,
+    "fi_skel80": 0.0587,
+    "faint_recall": 0.7569,
+    "fwhm_mm": NaN,
+    "auc_skel_far": 0.9315
+   }
+  },
+  "TRACE v3B x model A before the hard-negative retraining (product)": {
+   "f9h": {
+    "auc": 0.9087,
+    "ap": 0.8048,
+    "fi_skel80": 0.0319,
+    "faint_recall": 0.6587,
+    "fwhm_mm": 0.6147,
+    "auc_skel_far": 0.9546
+   },
+   "n841h": {
+    "auc": 0.8735,
+    "ap": 0.7293,
+    "fi_skel80": 0.0611,
+    "faint_recall": 0.7792,
+    "fwhm_mm": 0.6953,
+    "auc_skel_far": 0.9293
+   }
+  },
+  "TRACE v3B x A (product; the main image's rule)": {
+   "f9h": {
+    "auc": 0.9113,
+    "ap": 0.8075,
+    "fi_skel80": 0.0314,
+    "faint_recall": 0.6551,
+    "fwhm_mm": 0.5905,
+    "auc_skel_far": 0.9566
+   },
+   "n841h": {
+    "auc": 0.8738,
+    "ap": 0.7311,
+    "fi_skel80": 0.0608,
+    "faint_recall": 0.7778,
+    "fwhm_mm": 0.6727,
+    "auc_skel_far": 0.9291
+   }
+  }
+ }
+}

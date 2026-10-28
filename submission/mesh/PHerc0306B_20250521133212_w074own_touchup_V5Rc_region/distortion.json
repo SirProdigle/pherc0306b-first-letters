@@ -1,0 +1,36 @@
+{
+ "n_cells": 19845,
+ "edges_u_vx_p5_p50_p95": [
+  19.24,
+  19.89,
+  20.16
+ ],
+ "edges_v_vx_p5_p50_p95": [
+  19.38,
+  19.99,
+  20.78
+ ],
+ "stretch_u_p5_p50_p95": [
+  0.962,
+  0.994,
+  1.008
+ ],
+ "stretch_v_p5_p50_p95": [
+  0.969,
+  0.999,
+  1.039
+ ],
+ "area_ratio_p5_p50_p95": [
+  0.944,
+  0.994,
+  1.033
+ ],
+ "grid_angle_deg_p5_p50_p95": [
+  88.07,
+  89.91,
+  92.2
+ ],
+ "share_cells_stretch_off_more_than_5pct": 0.0743,
+ "share_cells_area_off_more_than_10pct": 0.0226,
+ "scope": "every valid cell of the region cut"
+}

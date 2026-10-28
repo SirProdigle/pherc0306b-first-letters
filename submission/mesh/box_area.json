@@ -1,0 +1,94 @@
+{
+ "box_mm": {
+  "u0": -15.0,
+  "u1": 23.0,
+  "v0": -6.84,
+  "v1": 2.72
+ },
+ "box_size_mm": [
+  38.0,
+  9.56
+ ],
+ "flat_cm2": 3.6328,
+ "mesh3d_cm2": 3.6033,
+ "flat_covered_by_valid_cells": 1.0,
+ "method": "3-D area of the mesh triangles (2 per grid cell), each cell weighted by its fractional overlap with the box in the flat (u, v) grid",
+ "corners": {
+  "top_left": {
+   "claim_frame_mm_as_rendered": [
+    -15.0,
+    -6.84
+   ],
+   "render_px_xy": [
+    2430.6,
+    1638.9
+   ],
+   "tifxyz_grid_row_col": [
+    81.94,
+    121.53
+   ],
+   "volume_xyz_vx": [
+    3590.5,
+    4469.6,
+    10305.6
+   ]
+  },
+  "top_right": {
+   "claim_frame_mm_as_rendered": [
+    23.0,
+    -6.84
+   ],
+   "render_px_xy": [
+    6828.7,
+    1638.9
+   ],
+   "tifxyz_grid_row_col": [
+    81.94,
+    341.44
+   ],
+   "volume_xyz_vx": [
+    5723.5,
+    3298.8,
+    10031.0
+   ]
+  },
+  "bottom_right": {
+   "claim_frame_mm_as_rendered": [
+    23.0,
+    2.72
+   ],
+   "render_px_xy": [
+    6828.7,
+    2745.4
+   ],
+   "tifxyz_grid_row_col": [
+    137.27,
+    341.44
+   ],
+   "volume_xyz_vx": [
+    5658.2,
+    3647.3,
+    9022.0
+   ]
+  },
+  "bottom_left": {
+   "claim_frame_mm_as_rendered": [
+    -15.0,
+    2.72
+   ],
+   "render_px_xy": [
+    2430.6,
+    2745.4
+   ],
+   "tifxyz_grid_row_col": [
+    137.27,
+    121.53
+   ],
+   "volume_xyz_vx": [
+    3447.9,
+    4517.5,
+    9266.6
+   ]
+  }
+ }
+}

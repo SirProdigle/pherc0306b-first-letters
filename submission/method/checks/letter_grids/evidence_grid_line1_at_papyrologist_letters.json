@@ -1,0 +1,230 @@
+{
+ "note": "Line 1 in columns at our papyrologist's letters (her 23 Oct reading; used only to place the columns).",
+ "frame": "papyrologist pack pixels (5278 px wide, top row = u -17.1..+28.5, v +7.5 mm; main image px = these + (1713, 1062))",
+ "band_y": [
+  520,
+  1180
+ ],
+ "column_x_edges": [
+  627,
+  883,
+  1128,
+  1519,
+  1645,
+  1829,
+  2259,
+  2490,
+  2750,
+  3060,
+  3270,
+  3470,
+  3705,
+  4024,
+  4270,
+  4580
+ ],
+ "labels": [
+  "Τ",
+  "Ο",
+  "Δ",
+  "Ι",
+  "Α",
+  "Υ",
+  "Τ",
+  "Ο",
+  "Α",
+  "Ι",
+  "Ρ",
+  "Ε",
+  "Τ",
+  "Ο",
+  "Ν"
+ ],
+ "line2_letters": null,
+ "display": "each map z-scored over the context, grey rule median -> 99.9th percentile of the shown area, dark = ink",
+ "rows": [
+  {
+   "group": "Noise-reduced models (new)",
+   "label": "MAIN IMAGE: TRACE x A-hn",
+   "maps": {
+    "TxAhn": "TxAhn.npy"
+   }
+  },
+  {
+   "group": "Noise-reduced models (new)",
+   "label": "A-hn x sqrt(Reader V3)",
+   "maps": {
+    "AhnV3": "AhnV3.npy"
+   }
+  },
+  {
+   "group": "Noise-reduced models (new)",
+   "label": "C x sqrt(Reader V3)",
+   "maps": {
+    "CV3": "CV3.npy"
+   }
+  },
+  {
+   "group": "Noise-reduced models (new)",
+   "label": "B-hn x sqrt(Reader V3)",
+   "maps": {
+    "BhnV3": "BhnV3.npy"
+   }
+  },
+  {
+   "group": "Noise-reduced models (new)",
+   "label": "A-hn alone (A retrained on blank papyrus)",
+   "maps": {
+    "Ahn": "Ahn.npy"
+   }
+  },
+  {
+   "group": "Public models",
+   "label": "TRACE v3B",
+   "maps": {
+    "tr": "fwd_tr.npy"
+   }
+  },
+  {
+   "group": "Public models",
+   "label": "Reader V3",
+   "maps": {
+    "v3": "fwd_v3.npy"
+   }
+  },
+  {
+   "group": "Public models",
+   "label": "Reader v2",
+   "maps": {
+    "rv2": "fwd_rv2.npy"
+   }
+  },
+  {
+   "group": "Public models",
+   "label": "v8-in (organisers' base model)",
+   "maps": {
+    "v8": "V5Rc_ctx_base_dl0_asc_g3_fullraster.npy"
+   }
+  },
+  {
+   "group": "Public models",
+   "label": "v8Q (v8-in tuned on PHerc1447 + 0343)",
+   "maps": {
+    "v8q": "fwd_v8q.npy"
+   }
+  },
+  {
+   "group": "Public models",
+   "label": "organisers' PHerc1447 fine-tune (LOO)",
+   "maps": {
+    "loo": "fwd_loo_PROVISIONAL.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model A (mean of 3 seeds)",
+   "maps": {
+    "A": "ens_main3_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model A, seed 0",
+   "maps": {
+    "s0": "self_main_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model A, seed 1",
+   "maps": {
+    "s1": "self_main_s1_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model A, seed 2",
+   "maps": {
+    "s2": "self_main_s2_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model B",
+   "maps": {
+    "B": "self_343h_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model B, seed 1",
+   "maps": {
+    "B1": "self_343h_s1_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "variant: sc",
+   "maps": {
+    "sc": "self_sc_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "variant: no pseudo-labels",
+   "maps": {
+    "nopl": "self_nopl_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model C",
+   "maps": {
+    "C": "v8306_343h_s0_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Our models",
+   "label": "model C without PHerc0139 labels",
+   "maps": {
+    "C2": "v8306_343_s0_fwd_t1.npy"
+   }
+  },
+  {
+   "group": "Fixed whole-image rules",
+   "label": "TRACE + v8-in (version 5 main image)",
+   "maps": {
+    "tr": "fwd_tr.npy",
+    "v8": "V5Rc_ctx_base_dl0_asc_g3_fullraster.npy"
+   }
+  },
+  {
+   "group": "Fixed whole-image rules",
+   "label": "TRACE x A (before hard negatives)",
+   "maps": {
+    "TxA": "fwd_TxA.npy"
+   }
+  },
+  {
+   "group": "Fixed whole-image rules",
+   "label": "A x sqrt(TRACE)",
+   "maps": {
+    "softA": "A x sqrt(TRACE)"
+   }
+  },
+  {
+   "group": "Fixed whole-image rules",
+   "label": "TRACE x mean(A, B, C)",
+   "maps": {
+    "Tx3": "fwd_Tx3.npy"
+   }
+  },
+  {
+   "group": "Fixed whole-image rules",
+   "label": "minimum of the two model families",
+   "maps": {
+    "min_fam": "fwd_min_fam.npy"
+   }
+  }
+ ]
+}

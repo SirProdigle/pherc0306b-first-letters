@@ -1,0 +1,1 @@
+{"mode": "seed", "step_size": 20, "min_area_cm": 0.5, "generations": 100, "thread_limit": 4, "normal_grid_path": "/home/liam/projects/vesuvius-work/fl/PHerc0306B/ngrid_remote", "voxelsize": 8.64, "cache_size": 4000000000}

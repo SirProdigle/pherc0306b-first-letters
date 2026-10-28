@@ -1,0 +1,336 @@
+{
+ "image": "PHerc0306B_20250521133212_w074own_touchup_V5Rc.png",
+ "px_um": 8.64,
+ "px_per_mm": 115.741,
+ "numbering": "line, then position in the line counted from the left, in reading orientation",
+ "reading": {
+  "line 1": "τὸ̣ δι’ αὑτὸ α̣ἱ̣ρ̣ε̣τ̣όν",
+  "line 2": "π̣ [",
+  "source": "papyrologist (Nicola Bodill), 23 Oct 2026; dotted letters are uncertain"
+ },
+ "method": "bounding box of the main image's ink at half tone or darker inside the papyrologist's traced shape (23 Oct tracing) widened 0.15 mm, cut to the letter's stretch along the line and to its line's rows; measurement only",
+ "letters": [
+  {
+   "line": 1,
+   "position_in_line": 1,
+   "letter": "τ",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 2340,
+   "y_px": 1805,
+   "w_px": 251,
+   "h_px": 223,
+   "w_mm": 2.17,
+   "h_mm": 1.93,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": false,
+   "ink_px": 24782,
+   "stretch_u_mm": [
+    -11.68,
+    -9.47
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 2,
+   "letter": "ο̣",
+   "certainty": "dotted",
+   "measured": true,
+   "x_px": 2618,
+   "y_px": 1754,
+   "w_px": 223,
+   "h_px": 344,
+   "w_mm": 1.93,
+   "h_mm": 2.97,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": true,
+   "ink_px": 20997,
+   "stretch_u_mm": [
+    -9.47,
+    -7.35
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 3,
+   "letter": "δ",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 2841,
+   "y_px": 1673,
+   "w_px": 390,
+   "h_px": 441,
+   "w_mm": 3.37,
+   "h_mm": 3.81,
+   "runs_into_left_neighbour": true,
+   "runs_into_right_neighbour": true,
+   "ink_px": 52079,
+   "stretch_u_mm": [
+    -7.35,
+    -3.98
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 4,
+   "letter": "ι",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 3246,
+   "y_px": 1801,
+   "w_px": 92,
+   "h_px": 251,
+   "w_mm": 0.79,
+   "h_mm": 2.17,
+   "runs_into_left_neighbour": true,
+   "runs_into_right_neighbour": false,
+   "ink_px": 12110,
+   "stretch_u_mm": [
+    -3.98,
+    -2.89
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 5,
+   "letter": "α",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 3378,
+   "y_px": 1707,
+   "w_px": 163,
+   "h_px": 412,
+   "w_mm": 1.41,
+   "h_mm": 3.56,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": true,
+   "ink_px": 30747,
+   "stretch_u_mm": [
+    -2.89,
+    -1.3
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 6,
+   "letter": "υ",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 3541,
+   "y_px": 1762,
+   "w_px": 431,
+   "h_px": 417,
+   "w_mm": 3.72,
+   "h_mm": 3.6,
+   "runs_into_left_neighbour": true,
+   "runs_into_right_neighbour": true,
+   "ink_px": 53872,
+   "stretch_u_mm": [
+    -1.3,
+    2.42
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 7,
+   "letter": "τ",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 3972,
+   "y_px": 1769,
+   "w_px": 230,
+   "h_px": 406,
+   "w_mm": 1.99,
+   "h_mm": 3.51,
+   "runs_into_left_neighbour": true,
+   "runs_into_right_neighbour": true,
+   "ink_px": 24976,
+   "stretch_u_mm": [
+    2.42,
+    4.41
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 8,
+   "letter": "ο",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 4202,
+   "y_px": 1778,
+   "w_px": 261,
+   "h_px": 296,
+   "w_mm": 2.26,
+   "h_mm": 2.56,
+   "runs_into_left_neighbour": true,
+   "runs_into_right_neighbour": true,
+   "ink_px": 48013,
+   "stretch_u_mm": [
+    4.41,
+    6.66
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 9,
+   "letter": "α̣",
+   "certainty": "dotted",
+   "measured": true,
+   "x_px": 4586,
+   "y_px": 1799,
+   "w_px": 127,
+   "h_px": 232,
+   "w_mm": 1.1,
+   "h_mm": 2.0,
+   "runs_into_left_neighbour": true,
+   "runs_into_right_neighbour": false,
+   "ink_px": 6345,
+   "stretch_u_mm": [
+    6.66,
+    9.34
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 10,
+   "letter": "ι̣",
+   "certainty": "dotted",
+   "measured": true,
+   "x_px": 4872,
+   "y_px": 1752,
+   "w_px": 57,
+   "h_px": 265,
+   "w_mm": 0.49,
+   "h_mm": 2.29,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": false,
+   "ink_px": 2209,
+   "stretch_u_mm": [
+    9.34,
+    11.15
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 11,
+   "letter": "ρ̣",
+   "certainty": "dotted",
+   "measured": true,
+   "x_px": 5031,
+   "y_px": 1756,
+   "w_px": 53,
+   "h_px": 39,
+   "w_mm": 0.46,
+   "h_mm": 0.34,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": false,
+   "ink_px": 1740,
+   "stretch_u_mm": [
+    11.15,
+    12.88
+   ],
+   "note": "faint: little ink at half tone"
+  },
+  {
+   "line": 1,
+   "position_in_line": 12,
+   "letter": "ε̣",
+   "certainty": "dotted",
+   "measured": false
+  },
+  {
+   "line": 1,
+   "position_in_line": 13,
+   "letter": "τ̣",
+   "certainty": "dotted",
+   "measured": true,
+   "x_px": 5465,
+   "y_px": 1735,
+   "w_px": 272,
+   "h_px": 106,
+   "w_mm": 2.35,
+   "h_mm": 0.92,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": true,
+   "ink_px": 16107,
+   "stretch_u_mm": [
+    14.91,
+    17.67
+   ],
+   "note": "faint: little ink at half tone"
+  },
+  {
+   "line": 1,
+   "position_in_line": 14,
+   "letter": "ο",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 5737,
+   "y_px": 1740,
+   "w_px": 232,
+   "h_px": 268,
+   "w_mm": 2.0,
+   "h_mm": 2.32,
+   "runs_into_left_neighbour": true,
+   "runs_into_right_neighbour": false,
+   "ink_px": 24054,
+   "stretch_u_mm": [
+    17.67,
+    19.79
+   ],
+   "note": ""
+  },
+  {
+   "line": 1,
+   "position_in_line": 15,
+   "letter": "ν",
+   "certainty": "read",
+   "measured": true,
+   "x_px": 6013,
+   "y_px": 1822,
+   "w_px": 270,
+   "h_px": 139,
+   "w_mm": 2.33,
+   "h_mm": 1.2,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": false,
+   "ink_px": 16249,
+   "stretch_u_mm": [
+    19.79,
+    22.47
+   ],
+   "note": ""
+  },
+  {
+   "line": 2,
+   "position_in_line": 1,
+   "letter": "π̣",
+   "certainty": "dotted",
+   "measured": true,
+   "x_px": 2204,
+   "y_px": 2352,
+   "w_px": 228,
+   "h_px": 175,
+   "w_mm": 1.97,
+   "h_mm": 1.51,
+   "runs_into_left_neighbour": false,
+   "runs_into_right_neighbour": false,
+   "ink_px": 11272,
+   "stretch_u_mm": [
+    -13.14,
+    -10.88
+   ],
+   "note": ""
+  }
+ ]
+}

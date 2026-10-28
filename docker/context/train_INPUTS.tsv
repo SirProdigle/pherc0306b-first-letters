@@ -1,0 +1,12 @@
+# kind	path under W (mount read-only at /home/liam/projects/vesuvius-work/<path>)	files	bytes	sha256 (files only)
+zarr	x_focus/renders/A_own_r41.zarr	3372	2188131082	-
+zarr	x_focus306/renders/w052.zarr	1002	571985670	-
+zarr	x_focus306/renders/w053.zarr	1042	593600608	-
+zarr	x_req/20261020b/F6Y/w059.zarr	1153	660953137	-
+zarr	x_refine/trials/P5_scour_0306B/crops/p3w109_esc.zarr	368	162090169	-
+dir	data/pherc1447/w058	32	585971648	-
+dir	data/pherc1447/w060	32	599761719	-
+file	data/pherc1447/SHA256SUMS	1	8974	76f37ad3fea5852d5314dede7efd391b88d66474b42aed5bc395ddcc7a9abcab
+dir	.claude/worktrees/leadA-push3/x_push3/m306/self/packs	44	4053445499	-
+zarr	x_refine/trials/P1_surface_refine/renders/P1V5Rc.zarr	2544	1606663876	-
+zarr	x_req/20261020/A10/v4c_work/shuf_render.zarr	414	275949079	-

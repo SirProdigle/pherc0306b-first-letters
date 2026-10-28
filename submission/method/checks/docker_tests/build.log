@@ -1,0 +1,75 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.from_v1
+#1 transferring dockerfile:
+#1 transferring dockerfile: 4.28kB done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/library/fl-claim-a:final
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.2s
+
+#4 [ 1/15] FROM docker.io/library/fl-claim-a:final
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 3.64GB 4.8s
+#5 transferring context: 3.67GB 4.9s done
+#5 DONE 5.2s
+
+#6 [ 2/15] COPY v8in/ /opt/fl/third_party/v8in/
+#6 CACHED
+
+#7 [ 3/15] RUN echo "3b94548d7f9ba9f99bc4b0ad8cafcec6d42585c06304e1bd11e47b5d0f88c4cd  /opt/fl/third_party/v8in/model.safetensors" | sha256sum -c --quiet && echo "v8-in weights OK"  && echo "4cb8e9217e5fba795cc0d7fc53afd998ad82c6c5d1250cdb9e63008f36a8f305  /opt/fl/third_party/v8in/v8Q_final.safetensors" | sha256sum -c --quiet && echo "v8Q weights OK"
+#7 CACHED
+
+#8 [ 4/15] COPY reader-v3/reader-v3.pth /opt/fl/models/community/reader-v3/reader-v3.pth
+#8 CACHED
+
+#9 [ 5/15] COPY checkpoints.tsv /opt/fl/env/checkpoints.tsv
+#9 CACHED
+
+#10 [ 6/15] RUN echo "ea405417450abd8ace1b8ff79ebce3adb646c5e48ab95da46844d77efe984d8a  /opt/fl/models/community/reader-v3/reader-v3.pth" | sha256sum -c --quiet && echo "Reader V3 weights OK"
+#10 CACHED
+
+#11 [ 7/15] COPY finalist/ /opt/fl/third_party/v8in/finalist/
+#11 DONE 1.5s
+
+#12 [ 8/15] RUN sha256sum -c --quiet /opt/fl/third_party/v8in/finalist/SHA256SUMS && echo "version-7 model weights OK"
+#12 0.794 version-7 model weights OK
+#12 DONE 0.9s
+
+#13 [ 9/15] COPY train/ /opt/fl/train/
+#13 DONE 0.4s
+
+#14 [10/15] RUN mkdir -p /home/liam/projects/vesuvius-work && cp -r /opt/fl/train/W/. /home/liam/projects/vesuvius-work/  && TAB="$(printf '\t')" && while IFS="$TAB" read -r p t; do case "$p" in ''|#*) continue;; esac;       mkdir -p "$(dirname /home/liam/projects/vesuvius-work/$p)"; ln -sfn "$t" "/home/liam/projects/vesuvius-work/$p"; done < /opt/fl/train/links.tsv  && chmod -R a+rwX /home/liam/projects && echo "training tree OK"
+#14 0.264 training tree OK
+#14 DONE 0.3s
+
+#15 [11/15] COPY data/ /opt/fl/data/
+#15 DONE 2.5s
+
+#16 [12/15] COPY code/ /opt/fl/
+#16 DONE 0.3s
+
+#17 [13/15] COPY mesh/ /opt/fl/mesh/
+#17 DONE 0.3s
+
+#18 [14/15] RUN cd /opt/fl && sha256sum -c --quiet data/inputs.sha256 && echo "inputs sha256 OK"
+#18 1.027 inputs sha256 OK
+#18 DONE 1.1s
+
+#19 [15/15] WORKDIR /out
+#19 DONE 0.3s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 4.1s done
+#20 writing image sha256:78d5ced4f8731c440bf36fd6fdc1b488719d1f6e8193e5e7a401f6ade0b56c2e done
+#20 naming to docker.io/library/fl-claim-a7:draft 0.0s done
+#20 DONE 4.2s
+build rc=0 seconds=19
+image sha256:78d5ced4f8731c440bf36fd6fdc1b488719d1f6e8193e5e7a401f6ade0b56c2e size_bytes=12003346879

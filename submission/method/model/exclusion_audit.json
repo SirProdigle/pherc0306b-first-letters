@@ -1,0 +1,202 @@
+{
+ "train_config": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/denoise/configs/hn4_s0.json",
+ "lane": "self",
+ "radius_mm": 2.0,
+ "slab_mm": 0.2,
+ "regions": {
+  "A6": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_focus/renders/A_own_r41.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/fl/sqm/PHerc0306B_a306_row/auto_grown_20261012141245268",
+   "offset_yx": [
+    0,
+    0
+   ],
+   "variant": "main",
+   "tiles": 14233,
+   "rule_a_centre_corners_pad07_ok": 14233,
+   "rule_b_grid25_pad0_ok": 14233,
+   "labelled_px_sampled": 64378,
+   "rule_c_labelled_px_ok": 64378,
+   "min_distance_mm_tile_grid": 2.925,
+   "median_distance_mm_tile_grid": 4.328,
+   "seconds": 25.8
+  },
+  "w052": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w052.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w052/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    0
+   ],
+   "variant": "main",
+   "tiles": 2810,
+   "rule_a_centre_corners_pad07_ok": 2810,
+   "rule_b_grid25_pad0_ok": 2810,
+   "labelled_px_sampled": 13676,
+   "rule_c_labelled_px_ok": 13676,
+   "min_distance_mm_tile_grid": 2.925,
+   "median_distance_mm_tile_grid": 3.564,
+   "seconds": 6.7
+  },
+  "w053": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_focus306/renders/w053.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w053/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    0
+   ],
+   "variant": "main",
+   "tiles": 2065,
+   "rule_a_centre_corners_pad07_ok": 2065,
+   "rule_b_grid25_pad0_ok": 2065,
+   "labelled_px_sampled": 10144,
+   "rule_c_labelled_px_ok": 10144,
+   "min_distance_mm_tile_grid": 2.925,
+   "median_distance_mm_tile_grid": 3.633,
+   "seconds": 5.6
+  },
+  "w059": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_req/20261020b/F6Y/w059.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_vast_plan/results/PHerc0306B_z8400/results/flat/w059/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    0
+   ],
+   "variant": "main",
+   "tiles": 1503,
+   "rule_a_centre_corners_pad07_ok": 1503,
+   "rule_b_grid25_pad0_ok": 1503,
+   "labelled_px_sampled": 6472,
+   "rule_c_labelled_px_ok": 6472,
+   "min_distance_mm_tile_grid": 2.929,
+   "median_distance_mm_tile_grid": 5.252,
+   "seconds": 0.7
+  },
+  "w109": {
+   "zarr": "/home/liam/projects/vesuvius-work/x_refine/trials/P5_scour_0306B/crops/p3w109_esc.zarr",
+   "mesh": "/home/liam/projects/vesuvius-work/x_local_lanes/PHerc0306B_z9900/out/L0306bacw/p3/flat/w109/tifxyz/flatten.tifxyz",
+   "offset_yx": [
+    0,
+    800
+   ],
+   "variant": "main",
+   "tiles": 2720,
+   "rule_a_centre_corners_pad07_ok": 2720,
+   "rule_b_grid25_pad0_ok": 2720,
+   "labelled_px_sampled": 11640,
+   "rule_c_labelled_px_ok": 11640,
+   "min_distance_mm_tile_grid": 2.931,
+   "median_distance_mm_tile_grid": 5.274,
+   "seconds": 7.6
+  }
+ },
+ "tiles_total": 23331,
+ "all_allowed": true,
+ "teacher_input_rule": "CT set to 0 wherever the pad-0 rule fails (< 2.2 mm from the zone, or no mesh) before any teacher ran (m306/self/code/teachers.py region_vol); label z-scores use pool pixels only (>= 2.9 mm from the zone)",
+ "finalist": "v7_trace_x_Ahn_product",
+ "zone": {
+  "json": {
+   "created": "2026-10-21",
+   "lane": "P306",
+   "units": "PHerc0306B 20250521133212 voxels (8.64 um), columns x,y,z",
+   "buffer_mm_applied_by_check": 2.0,
+   "densify": 4,
+   "margin_mm": 2.0,
+   "sources": [
+    {
+     "mesh": "/home/liam/projects/vesuvius-work/x_req/20261020/A10/PHerc0306B_w074_claim_v4c/mesh/PHerc0306B_20250521133212_w074own_touchup_V5Rc",
+     "x_tif_sha256": "e6f14ec22d3c5cf2b37836cbb9141bae08c55b5bc1f89f4e07c202d424d64c29",
+     "versions": "v2, v3, v4, v4b, v4c, v5 (C1/C3/H)",
+     "window_mm": {
+      "u0": -30,
+      "u1": 30,
+      "v0": -20,
+      "v1": 15
+     },
+     "points": 1254679,
+     "note": "claim frame u=-36+x/K, v=-21+y/K; render px = grid/scale"
+    },
+    {
+     "mesh": "/home/liam/projects/vesuvius-work/CANDIDATES/SUBMISSION_FINAL_PHerc0306B/mesh/PHerc0306B_20250521133212_w074own_auto_grown_20261012144243662",
+     "x_tif_sha256": "831220311c68877751ef702d39e8746224902014fac5956616e74e33720eefc8",
+     "versions": "v1 (14 Oct)",
+     "window_mm": {
+      "u0": -34,
+      "u1": 30,
+      "v0": -20,
+      "v1": 18
+     },
+     "points": 1131335,
+     "levelling": {
+      "centre_render_px": [
+       2727.0161382924634,
+       2825.2282391046297
+      ],
+      "line_dir": [
+       0.9171081972118806,
+       -0.398638375732661
+      ],
+      "down_dir": [
+       0.398638375732661,
+       0.9171081972118806
+      ],
+      "note": "u along the line, v down as rendered; image y = -v"
+     },
+     "note": "superset of the v1 view (u -24..16, v -11..8) and a 60 x 36 mm context"
+    }
+   ],
+   "n_points": 2386014,
+   "bbox_xyz": [
+    [
+     2751.903076171875,
+     2069.7958984375,
+     7208.84619140625
+    ],
+    [
+     6265.58740234375,
+     5822.00439453125,
+     11976.31640625
+    ]
+   ],
+   "zone_npz_sha256": "833da5dfaf5ff94f5c884ac9d0352befb1c7d271716fbca318ae5afb0e05b062"
+  },
+  "zone_npz_sha256": "833da5dfaf5ff94f5c884ac9d0352befb1c7d271716fbca318ae5afb0e05b062",
+  "check_py_sha256": "9b622526ae42abb8324368bf36de2a278b6a2309f288df609ff1b7b2c15423fa"
+ },
+ "rule": "a training tile is allowed iff its 3-D points are >= 2.0 mm (zone buffer) + 0.2 mm (render slab) + pad from every point of every surface shown in any lead-A claim image (versions 1-7: mesh V5Rc u -30..+30 x v -20..+15 mm and the v1 mesh window, +2 mm in-plane margin), on any winding",
+ "cloud_packs": {
+  "note": "all three version-7 seeds (hn4_s0, hn4_s1, hn4_s2) and the hn4 decoy were trained on rented GPUs from packs/306_<r>.npz (m306/self/code/make_packs.py, built with train_self.src_306), the same packs as model A's; their tile lists equal the audited list",
+  "regions": {
+   "A6": {
+    "pack": "306_A6.npz",
+    "pack_sha256": "74da8e30ea80d3e0289b00e93559cbad135428a72013adc6dbb5c18e2a170dff",
+    "pack_tiles": 14233,
+    "identical_to_audited_tiles": true
+   },
+   "w052": {
+    "pack": "306_w052.npz",
+    "pack_sha256": "042379588c2a98159dcf301b57174f0b5b822f3c5eba122c8dc36a15531b101a",
+    "pack_tiles": 2810,
+    "identical_to_audited_tiles": true
+   },
+   "w053": {
+    "pack": "306_w053.npz",
+    "pack_sha256": "b4375a625fa7d8134c9ba36ea8709f0f2d458ee216600812a77a2af9e57354e5",
+    "pack_tiles": 2065,
+    "identical_to_audited_tiles": true
+   },
+   "w059": {
+    "pack": "306_w059.npz",
+    "pack_sha256": "6b7b918b474b64f5efb35823afcd9ae6758cecb2e734e4636a02ee0c16c280a0",
+    "pack_tiles": 1503,
+    "identical_to_audited_tiles": true
+   },
+   "w109": {
+    "pack": "306_w109.npz",
+    "pack_sha256": "5f87f8d7a4eea39b02acb04582f9efa190c5b0707dc413fcc3c39f42764da895",
+    "pack_tiles": 2720,
+    "identical_to_audited_tiles": true
+   }
+  }
+ }
+}

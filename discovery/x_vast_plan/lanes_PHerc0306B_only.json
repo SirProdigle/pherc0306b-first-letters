@@ -1,0 +1,101 @@
+[
+ {
+  "id": "PHerc0306B_z8400",
+  "scroll": "PHerc0306B",
+  "um": 8.64,
+  "z0": 8400,
+  "z1": 9900,
+  "band_note": "SQM clearest band",
+  "sqm_q": 0.382,
+  "sqm_scroll_median": 0.3,
+  "sense": "ACW",
+  "sense_source": "registry (upstream catalog/volume properties)",
+  "tracks": "published",
+  "umbilicus": "/home/liam/projects/vesuvius-work/x_recipe_erwin/umb/umb_PHerc0306B.json",
+  "umbilicus_z": [
+   1100.0,
+   14400.0
+  ],
+  "umbilicus_covers_band": true,
+  "previous": "z 8500-10000, buggy axis, old triage",
+  "priority": 3,
+  "ready": true,
+  "blocker": null,
+  "wcenter": 55
+ },
+ {
+  "id": "PHerc0306B_z6900",
+  "scroll": "PHerc0306B",
+  "um": 8.64,
+  "z0": 6900,
+  "z1": 8400,
+  "band_note": "adjacent band to the 0306B leads (old-fit w050 row = new-fit w050; new-fit w074 line): look for more lines above/below; windings w035-w084",
+  "sqm_q": 0.382,
+  "sqm_scroll_median": 0.3,
+  "sense": "ACW",
+  "sense_source": "registry (upstream catalog/volume properties)",
+  "tracks": "published",
+  "umbilicus": "/home/liam/projects/vesuvius-work/x_recipe_erwin/umb/umb_PHerc0306B.json",
+  "umbilicus_z": [
+   1100.0,
+   14400.0
+  ],
+  "umbilicus_covers_band": true,
+  "previous": "z 8500-10000, buggy axis, old triage",
+  "priority": 3,
+  "ready": true,
+  "blocker": null,
+  "wcenter": 60,
+  "maxw": 50
+ },
+ {
+  "id": "PHerc0306B_z9900",
+  "scroll": "PHerc0306B",
+  "um": 8.64,
+  "z0": 9900,
+  "z1": 11400,
+  "band_note": "adjacent band to the 0306B leads (old-fit w050 row = new-fit w050; new-fit w074 line): look for more lines above/below; windings w035-w084",
+  "sqm_q": 0.382,
+  "sqm_scroll_median": 0.3,
+  "sense": "ACW",
+  "sense_source": "registry (upstream catalog/volume properties)",
+  "tracks": "published",
+  "umbilicus": "/home/liam/projects/vesuvius-work/x_recipe_erwin/umb/umb_PHerc0306B.json",
+  "umbilicus_z": [
+   1100.0,
+   14400.0
+  ],
+  "umbilicus_covers_band": true,
+  "previous": "z 8500-10000, buggy axis, old triage",
+  "priority": 3,
+  "ready": true,
+  "blocker": null,
+  "wcenter": 60,
+  "maxw": 50
+ },
+ {
+  "id": "PHerc0306B_z8400o",
+  "scroll": "PHerc0306B",
+  "um": 8.64,
+  "z0": 8400,
+  "z1": 9900,
+  "band_note": "lead A band, OUTER windings: the z8400 lane stopped at w074 (= lead A); w073-w116 here, overlapping w073-w075 to re-find the A line on a third surface",
+  "sqm_q": 0.382,
+  "sqm_scroll_median": 0.3,
+  "sense": "ACW",
+  "sense_source": "registry (upstream catalog/volume properties)",
+  "tracks": "published",
+  "umbilicus": "/home/liam/projects/vesuvius-work/x_recipe_erwin/umb/umb_PHerc0306B.json",
+  "umbilicus_z": [
+   1100.0,
+   14400.0
+  ],
+  "umbilicus_covers_band": true,
+  "previous": "z 8500-10000, buggy axis, old triage",
+  "priority": 0,
+  "ready": true,
+  "blocker": null,
+  "wcenter": 95,
+  "maxw": 44
+ }
+]

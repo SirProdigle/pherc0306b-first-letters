@@ -1,0 +1,322 @@
+{
+ "rule": {
+  "text": "Keep the original surface (lead A own-sheet GrowPatch resampled on the claim-frame carrier grid; w074big where A is absent) everywhere, EXCEPT where (i) the two independent cloud spiral-fit copies of winding w074 (lanes z8400 and z8400o; above the line also lane z9900) agree within 4 vx with each other, (ii) the m7-surface-prediction sheet tracker agrees with them within 4 vx, and (iii) the original is more than 4 vx away from them. There the surface is moved onto the m7-tracked sheet. Mask: opened 1 cell, grown 1 cell, components >= 0.5 mm2, feathered over 0.35 mm. ADOPTED region: only the component whose centroid lies in the pre-registered region \"line row right\" (u +12..+30, |v| <= 4 mm): 85.9 mm2 at the right end of the line (u ~+14..+23).",
+  "drivers": "CT-derived geometry only: spiral-fit surfaces, the published m7 surface prediction and the CT. No ink map, no label, no tracing was used to define, place or choose the touch-up.",
+  "code": "code/surface/touchup.py inputs inputs V5R_rightend 12,30,-4,4 OUT ; then reflatten.py (below)"
+ },
+ "adoption_criteria_label_free": {
+  "recto_fibre_score": {
+   "method": "Q5 recto score H per ~1 mm tile of CT layer 20: +1 = structure along u (the recto fibre family the writing runs along); P1 recto.py",
+   "before_V0_original": {
+    "right group": {
+     "H_median": 0.329,
+     "share_H_gt_0_15": 0.75,
+     "tiles": 40
+    },
+    "LR line row right": {
+     "H_median": 0.342,
+     "share_H_gt_0_15": 0.757,
+     "tiles": 144
+    },
+    "L line band": {
+     "H_median": 0.397,
+     "share_H_gt_0_15": 0.8,
+     "tiles": 135
+    },
+    "claim rect": {
+     "H_median": 0.264,
+     "share_H_gt_0_15": 0.639,
+     "tiles": 416
+    }
+   },
+   "after_V5_touchup": {
+    "right group": {
+     "H_median": 0.549,
+     "share_H_gt_0_15": 0.975,
+     "tiles": 40
+    },
+    "LR line row right": {
+     "H_median": 0.546,
+     "share_H_gt_0_15": 0.965,
+     "tiles": 144
+    },
+    "L line band": {
+     "H_median": 0.406,
+     "share_H_gt_0_15": 0.815,
+     "tiles": 135
+    },
+    "claim rect": {
+     "H_median": 0.28,
+     "share_H_gt_0_15": 0.671,
+     "tiles": 416
+    }
+   },
+   "note": "compared V0 vs V5 on the same (un-re-flattened) grid; H is metric-dependent"
+  },
+  "independent_sheet_identity": {
+   "touched_nodes": 2878,
+   "share_with_ge2_independent_surfaces_within_4vx": 0.955,
+   "share_both_lane_copies_within_4vx": 0.843,
+   "bar": 0.8,
+   "surfaces": "lane z8400 w074, lane z8400o w074, m7 track, R1 (a second GrowPatch)"
+  },
+  "seam": {
+   "all_touched": {
+    "edges": 2258,
+    "median": 2.72,
+    "p90": 22.85,
+    "share_gt2": 0.562
+   },
+   "original_same_edges": {
+    "median": 1.2,
+    "p90": 20.12,
+    "share_gt2": 0.365
+   },
+   "inside_4cm2_rectangle": "median 0.77, p90 2.73 vx per cell (original 0.72 / 2.03)",
+   "outside": "p90 25.25 (original 23.24): the chevron fold below the group"
+  }
+ },
+ "geometry_before": {
+  "note": "where the touch-up lands, A sits ~9 vx off the sheet that both lane copies and the m7 track agree on (97-99 % within 4 vx)"
+ },
+ "reflattening": {
+  "method": "fold-weighted ARAP (local/global, cotangent weights) over u -31..+31 x v -21..+16 mm; triangles whose 3-D/flat area ratio is outside [0.8, 1.25] weighted 0.02; Procrustes-aligned to the old (u, v) on the line band u -10..+8, |v| <= 2.5; resampled on the same carrier grid",
+  "args": "--region=-31,31,-21,16 --anchor=-10,8,-2.5,2.5 --iters 60 --fold-weight 0.02 --fold-thr 1.25",
+  "distortion": {
+   "before:region": {
+    "stretch_u": [
+     0.899,
+     0.998,
+     1.464
+    ],
+    "stretch_v": [
+     0.804,
+     1.012,
+     1.826
+    ],
+    "shear": [
+     -52.942,
+     -1.158,
+     8.855
+    ],
+    "area": [
+     0.541,
+     1.005,
+     1.828
+    ],
+    "out5": 0.515
+   },
+   "before:right_group": {
+    "stretch_u": [
+     0.925,
+     0.956,
+     0.974
+    ],
+    "stretch_v": [
+     1.075,
+     1.136,
+     1.248
+    ],
+    "shear": [
+     -2.804,
+     -1.613,
+     -0.59
+    ],
+    "area": [
+     1.04,
+     1.088,
+     1.161
+    ],
+    "out5": 1.0
+   },
+   "before:line_band": {
+    "stretch_u": [
+     0.948,
+     0.999,
+     1.063
+    ],
+    "stretch_v": [
+     0.975,
+     1.007,
+     1.163
+    ],
+    "shear": [
+     -8.314,
+     -0.085,
+     1.933
+    ],
+    "area": [
+     0.966,
+     1.007,
+     1.132
+    ],
+    "out5": 0.205
+   },
+   "before:rect": {
+    "stretch_u": [
+     0.945,
+     0.995,
+     1.017
+    ],
+    "stretch_v": [
+     0.984,
+     1.01,
+     1.217
+    ],
+    "shear": [
+     -2.639,
+     -0.12,
+     1.378
+    ],
+    "area": [
+     0.984,
+     1.008,
+     1.147
+    ],
+    "out5": 0.258
+   },
+   "after:region": {
+    "stretch_u": [
+     0.936,
+     1.0,
+     1.233
+    ],
+    "stretch_v": [
+     0.951,
+     1.001,
+     1.296
+    ],
+    "shear": [
+     -18.035,
+     0.123,
+     6.447
+    ],
+    "area": [
+     0.923,
+     1.002,
+     1.4
+    ],
+    "out5": 0.262
+   },
+   "after:right_group": {
+    "stretch_u": [
+     0.982,
+     0.999,
+     1.007
+    ],
+    "stretch_v": [
+     0.999,
+     1.003,
+     1.015
+    ],
+    "shear": [
+     -0.426,
+     0.194,
+     0.891
+    ],
+    "area": [
+     0.983,
+     1.002,
+     1.02
+    ],
+    "out5": 0.0
+   },
+   "after:line_band": {
+    "stretch_u": [
+     0.979,
+     0.995,
+     1.01
+    ],
+    "stretch_v": [
+     0.972,
+     0.997,
+     1.017
+    ],
+    "shear": [
+     -1.542,
+     0.018,
+     1.258
+    ],
+    "area": [
+     0.959,
+     0.992,
+     1.02
+    ],
+    "out5": 0.015
+   },
+   "after:rect": {
+    "stretch_u": [
+     0.976,
+     0.995,
+     1.006
+    ],
+    "stretch_v": [
+     0.975,
+     1.0,
+     1.016
+    ],
+    "shear": [
+     -1.471,
+     0.041,
+     1.126
+    ],
+    "area": [
+     0.958,
+     0.994,
+     1.017
+    ],
+    "out5": 0.004
+   },
+   "param_shift_mm": {
+    "anchor_p95": 0.102,
+    "right_group_median": 0.234,
+    "max": 11.092
+   }
+  }
+ },
+ "no_harm_measurement": {
+  "note": "measurement only (the papyrologist tracing, held out, warped through the exact 3-D correspondence); not used to adopt",
+  "warpback": {
+   "new": "P1V5Rc",
+   "old": "P1V5",
+   "r_L line band": 0.9867,
+   "cover_L line band": 0.969,
+   "r_claim rect": 0.9829,
+   "cover_claim rect": 0.829,
+   "r_LR line row right": 0.976,
+   "cover_LR line row right": 0.78,
+   "label1_new_warped": [
+    0.8961,
+    0.6774
+   ],
+   "label1_old": [
+    0.8963,
+    0.6743
+   ],
+   "label2_new_warped": [
+    0.9212,
+    0.7282
+   ],
+   "label2_old": [
+    0.9155,
+    0.7199
+   ],
+   "ct_r_L line band": 0.9912,
+   "ct_best_shift_px": [
+    0,
+    0,
+    0.9912
+   ],
+   "ct_r_claim rect": 0.9885
+  }
+ },
+ "reproduction": {
+  "check": "lane I2 re-ran touchup.py + reflatten.py from the shipped intermediate arrays (code/surface/inputs): x/y/z.tif and reflatten.json byte-identical to the claim mesh",
+  "inputs_sha256": {
+   "carrier.npz": "dd22701e391e8aff6a632c6b569be8a3de1059eb84ec10c44bfb4daeb2120d1f",
+   "track.npz": "c1eba9110dbcf9508855e2e65c65bcc08c16de352c804600c38d09145644165c",
+   "track_m7.npz": "b727c45a44f381fbce71b8f29a1b546562d91e4aecd26d6016e98700f9607429",
+   "x_z99_w074.npy": "fadf182717574128359ca2f1fdf6198268d6f098b7b1576a7ce2c874d650dddc"
+  }
+ }
+}

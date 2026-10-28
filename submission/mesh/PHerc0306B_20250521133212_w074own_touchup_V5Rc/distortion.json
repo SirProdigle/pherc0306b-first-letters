@@ -1,0 +1,36 @@
+{
+ "n_cells": 73789,
+ "edges_u_vx_p5_p50_p95": [
+  18.7,
+  20.0,
+  24.94
+ ],
+ "edges_v_vx_p5_p50_p95": [
+  19.01,
+  20.01,
+  26.5
+ ],
+ "stretch_u_p5_p50_p95": [
+  0.935,
+  1.0,
+  1.247
+ ],
+ "stretch_v_p5_p50_p95": [
+  0.95,
+  1.001,
+  1.325
+ ],
+ "area_ratio_p5_p50_p95": [
+  0.922,
+  1.002,
+  1.444
+ ],
+ "grid_angle_deg_p5_p50_p95": [
+  83.08,
+  89.88,
+  108.15
+ ],
+ "share_cells_stretch_off_more_than_5pct": 0.2669,
+ "share_cells_area_off_more_than_10pct": 0.1863,
+ "scope": "every valid cell of the mesh"
+}

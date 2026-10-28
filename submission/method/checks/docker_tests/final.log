@@ -1,0 +1,44 @@
+[0s] final images: lead c6_grey, maps shipped, CT shipped, mesh shipped
+view  1 c6_grey         -> /out/final/variants/TRACE_x_v8306H3_grey_page.png  48df135d02b2
+view  2 c6_threshold    -> /out/final/variants/TRACE_x_v8306H3_secondary_rung_L050.png  b8217d86c0ac
+view  3 c6a_grey        -> /out/final/variants/v8306H3_grey_page.png  b48a39448447
+view 3b c6z_grey        -> /out/final/variants/TRACE_plus_v8306H3_grey_page.png  a8f6f0a7afee
+view ctl ctl_decoy_grey  -> /out/final/variants/CONTROL_TRACE_x_DECOY_grey_page.png  29c96ff3cfd6
+view 5-1 c3_grey         -> /out/final/variants/TRACE_v8in_grey_page.png  291decc37413
+view 5-2 c3_threshold    -> /out/final/variants/TRACE_v8in_secondary_rung_L050.png  a033f551f6b1
+view 5-3 v8g3_grey       -> /out/final/variants/v8in_grey_page.png  616c92dd4baa
+view 5-3b tr_grey         -> /out/final/variants/TRACE_grey_page.png  4bbfbe8ed9ae
+view 5-4c-1 v3t_grey        -> /out/final/variants/V3_TRACE_grey_page.png  77df5cf8a9a4
+view 5-4c-2 v3t_secondary   -> /out/final/variants/V3_TRACE_secondary_rung_L050.png  06057fade2e8
+view 5-4c-3 v3_grey         -> /out/final/variants/V3_grey_page.png  90a843119259
+view 5-4c-3b v3q_grey        -> /out/final/variants/V3_v8Q_grey_page.png  61837bc93442
+view 5-v2-1 rt_primary      -> /out/final/variants/Rv2_TRACE_primary.png  a6173eba993c
+view 5-v2-2 rt_secondary    -> /out/final/variants/Rv2_TRACE_secondary_rung_L050.png  2570b37b3472
+view 5-v2-3 rv8_secondary   -> /out/final/variants/Rv2_v8in_secondary_rung_L050.png  80c817930ae1
+view 5-v2- rv8_primary     -> /out/final/variants/Rv2_v8in_primary.png  c2b2c0459073
+view 5-v2-4 rv8q_secondary  -> /out/final/variants/Rv2_v8Q_secondary_rung_L050.png  1be809856546
+view 5-v2-5 rv8q_grey       -> /out/final/variants/Rv2_v8Q_grey_page.png  d3d0b32df070
+view 5-v2-6 rt_grey         -> /out/final/variants/Rv2_TRACE_grey_page.png  741999f1a853
+[459s] sha256 against the package's images:
+variants/CONTROL_TRACE_x_DECOY_grey_page.png: OK
+variants/Rv2_TRACE_grey_page.png: OK
+variants/Rv2_TRACE_primary.png: OK
+variants/Rv2_TRACE_secondary_rung_L050.png: OK
+variants/Rv2_v8in_primary.png: OK
+variants/Rv2_v8in_secondary_rung_L050.png: OK
+variants/Rv2_v8Q_grey_page.png: OK
+variants/Rv2_v8Q_secondary_rung_L050.png: OK
+variants/TRACE_grey_page.png: OK
+variants/TRACE_plus_v8306H3_grey_page.png: OK
+variants/TRACE_v8in_grey_page.png: OK
+variants/TRACE_v8in_secondary_rung_L050.png: OK
+variants/TRACE_x_v8306H3_grey_page.png: OK
+variants/TRACE_x_v8306H3_secondary_rung_L050.png: OK
+variants/V3_grey_page.png: OK
+variants/V3_TRACE_grey_page.png: OK
+variants/V3_TRACE_secondary_rung_L050.png: OK
+variants/V3_v8Q_grey_page.png: OK
+variants/v8306H3_grey_page.png: OK
+variants/v8in_grey_page.png: OK
+[459s] MATCH: byte-identical to the package PNGs; PHerc0306B_20250521133212_w074own_touchup_V5Rc.png = c6_grey
+[459s] done: /out/final

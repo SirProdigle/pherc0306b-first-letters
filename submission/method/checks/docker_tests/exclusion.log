@@ -1,0 +1,8 @@
+[0s] exclusion: the model's PHerc0306B training tiles against the zone (shipped zone, meshes, check.py)
+A6: {'tiles': 14233, 'ok_a': 14233, 'ok_b': 14233, 'min_mm': 2.925}
+w052: {'tiles': 2810, 'ok_a': 2810, 'ok_b': 2810, 'min_mm': 2.925}
+w053: {'tiles': 2065, 'ok_a': 2065, 'ok_b': 2065, 'min_mm': 2.925}
+w059: {'tiles': 1503, 'ok_a': 1503, 'ok_b': 1503, 'min_mm': 2.929}
+w109: {'tiles': 2720, 'ok_a': 2720, 'ok_b': 2720, 'min_mm': 2.931}
+{"tiles": 23331, "failed": 0, "verdict": "ALL ALLOWED"}
+[43s] exclusion done (rc 0)

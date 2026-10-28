@@ -1,0 +1,37 @@
+{
+ "arm": "v8Q",
+ "data": [
+  {
+   "winding": "w058",
+   "crop": [
+    2868,
+    4368,
+    671,
+    4433
+   ],
+   "tiles": 54798,
+   "target_frac": 0.2423,
+   "label_frac": 0.2423,
+   "erode_px": 0
+  },
+  {
+   "winding": "PHerc0343 jeff-j-chen tracings",
+   "crop": [
+    398,
+    2348,
+    875,
+    5799
+   ],
+   "tiles": 55028,
+   "target_frac": 0.1074,
+   "erode_px": 0
+  }
+ ],
+ "steps": 300,
+ "effective_batch": 32,
+ "lr": 1e-05,
+ "seed": 130697,
+ "bn": "frozen running statistics",
+ "sha256": "4cb8e9217e5fba795cc0d7fc53afd998ad82c6c5d1250cdb9e63008f36a8f305",
+ "init_sha256": "3b94548d7f9ba9f99bc4b0ad8cafcec6d42585c06304e1bd11e47b5d0f88c4cd"
+}

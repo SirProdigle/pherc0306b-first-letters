@@ -1,0 +1,171 @@
+{
+ "base v8-in": {
+  "source": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/eval/cands/base/known.json",
+  "trained_on": [],
+  "tta": 1,
+  "scores": {
+   "f9h": {
+    "set": "f9h",
+    "n_ink": 734965,
+    "n_neg": 2518649,
+    "auc": 0.8692885227200785,
+    "ap": 0.7403444313409586,
+    "auc_skel_far": 0.9118142884874826,
+    "t_skel80": 0.5063,
+    "fi_skel80": 0.12979,
+    "t_area80": 0.4298,
+    "fi_area80": 0.20026,
+    "fi_abs03647": 0.29733,
+    "blank_median": 0.2954,
+    "fwhm_mm": 0.6833,
+    "fwhm": {
+     "n": 19849,
+     "n_valid": 11646,
+     "valid_frac": 0.5867,
+     "fwhm_mm": 0.6833,
+     "fwhm_p25": 0.5097,
+     "fwhm_p75": 0.8844
+    },
+    "faint": {
+     "tercile0": 0.6645056726094003,
+     "tercile1": 0.7897268510565195,
+     "tercile2": 0.9013415647631485
+    },
+    "faint_recall": 0.6645056726094003
+   },
+   "n841h": {
+    "set": "n841h",
+    "n_ink": 363793,
+    "n_neg": 1087496,
+    "auc": 0.8404247838632588,
+    "ap": 0.6738423393446266,
+    "auc_skel_far": 0.9068775491461085,
+    "t_skel80": 0.5345,
+    "fi_skel80": 0.1207,
+    "t_area80": 0.4511,
+    "fi_area80": 0.19858,
+    "fi_abs03647": 0.34194,
+    "blank_median": 0.3128,
+    "fwhm_mm": 0.7833,
+    "fwhm": {
+     "n": 11091,
+     "n_valid": 4740,
+     "valid_frac": 0.4274,
+     "fwhm_mm": 0.7833,
+     "fwhm_p25": 0.6006,
+     "fwhm_p75": 1.0024
+    },
+    "faint": {
+     "tercile0": 0.7821982467970331,
+     "tercile1": 0.8472847996205833,
+     "tercile2": 0.7599896211728074
+    },
+    "faint_recall": 0.7821982467970331
+   },
+   "w060": {
+    "set": "w060",
+    "n_ink": 819660,
+    "n_neg": 1954789,
+    "auc": 0.8045695967723693,
+    "ap": 0.6976069062907491,
+    "auc_skel_far": 0.8746788176979262,
+    "t_skel80": 0.3147,
+    "fi_skel80": 0.24131,
+    "t_area80": 0.2846,
+    "fi_area80": 0.34797,
+    "fi_abs03647": 0.14839,
+    "blank_median": 0.2586,
+    "fwhm_mm": 0.5088,
+    "fwhm": {
+     "n": 9928,
+     "n_valid": 8586,
+     "valid_frac": 0.8648,
+     "fwhm_mm": 0.5088,
+     "fwhm_p25": 0.3509,
+     "fwhm_p75": 0.6623
+    },
+    "faint": {
+     "tercile0": 0.8277858176555717,
+     "tercile1": 0.786235662148071,
+     "tercile2": 0.8000934142923868
+    },
+    "faint_recall": 0.8277858176555717
+   },
+   "w062a": {
+    "set": "w062a",
+    "n_px": 3094583,
+    "r_loo": 0.818,
+    "r_base": 0.9561,
+    "auc_vs_loo": 0.9880360621531412,
+    "ap_vs_loo": 0.9817756491061009,
+    "pseudo": "organisers LOO-w062 map >= 0.5 vs < 0.2",
+    "auc_vs_base": 0.9998413163745076
+   }
+  }
+ },
+ "organisers' LOO-w062 fine-tune (1447 w058 + w060 only)": {
+  "source": "/home/liam/projects/vesuvius-work/.claude/worktrees/leadA-push3/x_push3/m306/self/ref_loo/known.json",
+  "trained_on": null,
+  "tta": 1,
+  "scores": {
+   "f9h": {
+    "set": "f9h",
+    "n_ink": 734965,
+    "n_neg": 2518649,
+    "auc": 0.848739498664678,
+    "ap": 0.7069189169126342,
+    "auc_skel_far": 0.8977252534148407,
+    "t_skel80": 0.4787,
+    "fi_skel80": 0.16972,
+    "t_area80": 0.3938,
+    "fi_area80": 0.24377,
+    "fi_abs03647": 0.27823,
+    "blank_median": 0.2623,
+    "fwhm_mm": 0.6811,
+    "fwhm": {
+     "n": 19849,
+     "n_valid": 11657,
+     "valid_frac": 0.5873,
+     "fwhm_mm": 0.6811,
+     "fwhm_p25": 0.4786,
+     "fwhm_p75": 0.8914
+    },
+    "faint": {
+     "tercile0": 0.6677471636952999,
+     "tercile1": 0.8294107541659509,
+     "tercile2": 0.8717796509557165
+    },
+    "faint_recall": 0.6677471636952999
+   },
+   "n841h": {
+    "set": "n841h",
+    "n_ink": 363793,
+    "n_neg": 1087496,
+    "auc": 0.8245778752269114,
+    "ap": 0.6589324491612887,
+    "auc_skel_far": 0.8933823048592247,
+    "t_skel80": 0.5619,
+    "fi_skel80": 0.17237,
+    "t_area80": 0.4786,
+    "fi_area80": 0.23979,
+    "fi_abs03647": 0.3784,
+    "blank_median": 0.3064,
+    "fwhm_mm": 0.7869,
+    "fwhm": {
+     "n": 11091,
+     "n_valid": 3910,
+     "valid_frac": 0.3525,
+     "fwhm_mm": 0.7869,
+     "fwhm_p25": 0.5989,
+     "fwhm_p75": 1.0008
+    },
+    "faint": {
+     "tercile0": 0.6928523263654753,
+     "tercile1": 0.8857007351197533,
+     "tercile2": 0.7867151011935651
+    },
+    "faint_recall": 0.6928523263654753
+   }
+  }
+ }
+}
