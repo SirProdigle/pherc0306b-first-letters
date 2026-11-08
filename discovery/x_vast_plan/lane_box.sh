@@ -188,10 +188,17 @@ s_post() {
       >> $LANE/logs/window_score.log 2>&1; sleep 60; done ) & local sc=$!
   local par=${POST_PAR:-$(( CORES >= 24 ? 3 : CORES >= 12 ? 2 : 1 ))}; [ -n "$DRY" ] && par=1
   export -f one_winding cache_trim; export LANE DS S Z0 Z1 W V VOL NICE CACHE_GB
-  while read w; do echo "$w $tag"; done < $o/windings.txt | xargs -P $par -L 1 bash -c 'one_winding "$0" "$1"; cache_trim'
+  for pass in 1 2; do   # pass 2 retries what pass 1 left (one_winding skips finished renders)
+    while read w; do echo "$w $tag"; done < $o/windings.txt | xargs -P $par -L 1 bash -c 'one_winding "$0" "$1"; cache_trim'
+  done
   touch $LANE/post.done; wait $ink; touch $LANE/ink.done; wait $sc   # score loop finishes its current pass, never killed mid-write
-  local nr=$(ls -d $LANE/renders/*.zarr 2>/dev/null | wc -l) ni=$(ls $LANE/rv2/*/done_d0 2>/dev/null | wc -l)
-  echo "rendered $nr inked $ni" >> $LANE/logs/lane.log; [ $ni -ge 1 ] && [ $(( ni * 10 )) -ge $(( nr * 8 )) ]   # tolerate a few ink failures
+  local np=0 nr=0 ni=0 miss="" w   # count against the PLANNED windings: one_winding returns 0 on no snap / failed flatten / failed render
+  for w in $(cat $o/windings.txt); do
+    np=$((np + 1)); [ -f $LANE/renders/${tag}_$w.zarr/.done ] && nr=$((nr + 1))
+    if [ -f $LANE/rv2/${tag}_$w/done_d0 ]; then ni=$((ni + 1)); else miss="$miss $w"; fi
+  done
+  echo "planned $np rendered $nr inked $ni${miss:+ missing:$miss}" >> $LANE/logs/lane.log
+  [ $ni -ge 1 ] && [ $(( ni * 10 )) -ge $(( np * 8 )) ]   # tolerate a few failures; re-running lane_box.sh retries the missing
 }
 s_score() { OMP_NUM_THREADS=$TH $NICE $W/envs/vcpy/bin/python $W/fl/remote/spiral/window_score.py $LANE/rv2 > $LANE/logs/window_score.log 2>&1; }
 s_triage() {
