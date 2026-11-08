@@ -4,7 +4,7 @@ The scripts that found the line: the spiral-fit screening lane on PHerc. 0306B, 
 
 These are the files as they ran. They hard-code our paths (`/home/liam/projects/vesuvius-work`, `/home/liam/projects/villa`) and need edits to run elsewhere. The folders mirror our working repository, and `MANIFEST.tsv` gives each file's original path and sha256. Most are the current working copies, a few commits newer than the runs (failover, retries and similar robustness fixes). `x_vast_plan/lane_box.sh` is the exact version that ran on the lane.
 
-There is no data here. The only weights are the 2.6 MB glyph CNN `x_glyph/models/gA.pt` (CC BY-NC 4.0), trained on synthetic glyphs, public known text and text-free windows from our screening.
+There is no data here. The only weights are the 2.6 MB glyph CNN `x_glyph/models/gA.pt` (CC BY-NC 4.0), trained on synthetic glyphs, public known text and text-free windows from our screening. `x_glyph/train.py` defines the network (`GlyphNet`, `load_model`) and the training loop; `x_glyph/synth.py` draws the synthetic letters and artefacts. Retraining needs the window corpus, which is not here.
 
 ## Pipeline
 
@@ -41,6 +41,6 @@ Four files were cut down to PHerc. 0306B entries only; their entries are otherwi
 - VC3D `vc_grow_seg_from_seed` and `vc_render_tifxyz`: release AppImage `fb8c2c4` on rented boxes; locally a build of villa main from about 10 October with PR #2007's grid-cache fix.
 - Erwin Nieuwlaar's PHerc. 343 recipe (github.com/Nieuwlaar/pherc343-first-letters, `e8370f1f`): `mesh/snap_meshes.py`, `ink/scripts/run_ink.sh`, `ink/scripts/hecate_prep.py`.
 - Models: Hecate 9.6 µm, Reader v2 and TRACE v3B (sha256 pins in the lane scripts); `YoussefMoNader/ink-8um-v8in-pherc1447-loo-w062` for the fourth-model check.
-- Data, all public: the PHerc. 0306B volume, its m7 prediction, normal grids and Lasagna normals (Vesuvius Challenge open-data bucket); the spiral tracks (`dl.ash2txt.org/datasets/spiral_datasets/`); the Scan-Quality-Map atlas (github.com/jcooperkai-sys/Scan-Quality-Map).
+- Data, all public: the PHerc. 0306B volume, its m7 prediction and normal grids (Vesuvius Challenge open-data bucket); the spiral tracks (`dl.ash2txt.org/datasets/spiral_datasets/`); the Scan-Quality-Map atlas (github.com/jcooperkai-sys/Scan-Quality-Map). PHerc. 0306B has no published Lasagna prediction, so `erwin_data.sh` computes the fitter's sheet normals from the m7 prediction with `x_recipe_erwin/tools/make_normals.py`.
 - Vast.ai for the rented boxes: the `vastai` CLI with your own key, and an SSH key registered with Vast.
 - Python 3.14 with torch 2.14.1 (cu130) and zarr 3.4.1 (`fl/remote/setup.sh`); a separate older torch env for the fitter (`erwin_setup.sh`).
