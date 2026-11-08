@@ -18,7 +18,8 @@ cd $D/tracks; mkdir -p $P.dbm.vctracks
 for f in arclengths.f64 coordinates.i32 family_codes.i8 header.bin metadata.json offsets.i64 source_ids.u64 tortuosities.f64 z_bounds.i32; do
   [ -s $P.dbm.vctracks/$f ] || curl -sf -o $P.dbm.vctracks/$f $T/$P.dbm.vctracks/$f &
 done
-[ -s $P.dbm.crossings.npz ] || curl -sf -o $P.dbm.crossings.npz $T/$P.dbm.crossings.npz &
+# no published crossings cache: on an anticlockwise fit (PHerc0175A) it failed to remap ("walk crossing partner is out
+# of range") and the fallback rebuild rejects mirrored coordinates; without it the fitter computes exact crossings in ~1 min
 wait
 python3 - <<PY
 import json, os, urllib.request
