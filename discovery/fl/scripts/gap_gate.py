@@ -17,10 +17,19 @@ def load(f, shape):
     return cv2.resize(a, (shape[1], shape[0])) if a.shape != shape else a
 
 
-def gap_stats(render, ink, d=0, centre=None, um=8.64, K=3, T=2.0, mask=None, dump=None, near_mm=0.3):
+def gap_stats(render, ink, d=0, centre=None, um=8.64, K=3, T=2.0, mask=None, dump=None, near_mm=0.3, cols=None):
+    """cols=(c0, c1): compute on those columns only (ink and mask cropped the same way). With a mask that is False
+    outside a window, a crop of the window +- 1000 px (> 4 sigma of the widest blur, 2 mm) gives the same statistics
+    at a fraction of the cost."""
     v = zarr.open(str(render), mode='r')['0']
     c = v.shape[0] // 2 if centre is None else centre
-    st = np.asarray(v[c + d - K:c + d + K + 1]).astype(np.float32)
+    if cols is not None:
+        c0, c1 = max(0, cols[0]), min(v.shape[2], cols[1])
+        st = np.asarray(v[c + d - K:c + d + K + 1, :, c0:c1]).astype(np.float32)
+        ink = ink[:, c0:c1]
+        mask = None if mask is None else mask[:, c0:c1]
+    else:
+        st = np.asarray(v[c + d - K:c + d + K + 1]).astype(np.float32)
     valid = (st > 0).all(0)
     valid = cv2.erode(valid.astype(np.uint8), np.ones((15, 15), np.uint8)) > 0
     if mask is not None:
