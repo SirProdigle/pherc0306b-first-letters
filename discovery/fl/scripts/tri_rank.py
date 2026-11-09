@@ -73,7 +73,8 @@ for f in sorted(glob.glob(os.path.join(a.maps, (a.tag + '_' if a.tag else '') + 
         cand.append(r)
 texs = [r['tex'] for r in cand if r['tex'] is not None]
 lane_tex = float(np.median(texs)) if len(texs) >= 5 else None      # too few windows: the papyrus gate is skipped
-rows = []
+rows = []; _zc = {}
+cand.sort(key=lambda r: (r['name'], r['side']))
 for r in cand:
     d, ren, n, side, x0 = r.pop('_d'), r.pop('_ren'), r['name'], r['side'], r['x0']
     hard, soft = [], []
@@ -84,10 +85,12 @@ for r in cand:
         if r['rel_tex'] < REL_TEX_MIN: hard.append('no papyrus texture (mounting material/void)')
     zf = glob.glob(os.path.join(d, f"*_d0_{'reverse' if side == 'rev' else 'fwd'}_z.npy"))
     if not hard and os.path.exists(ren) and zf:
-        z = np.load(zf[0]).astype(np.float32)
+        if _zc.get('f') != zf[0]:                          # one fused map in memory: candidates come grouped by winding
+            _zc.clear(); _zc['f'] = zf[0]; _zc['z'] = np.load(zf[0]).astype(np.float32)
+        z = _zc['z']
         if not a.no_crack:
             m = np.zeros(z.shape, bool); m[:, x0:x0 + a.win] = True
-            try: r['crack'] = round(gap_stats(ren, z, d=0, um=a.um, mask=m)['enrich'], 2)
+            try: r['crack'] = round(gap_stats(ren, z, d=0, um=a.um, mask=m, cols=(x0 - 1000, x0 + a.win + 1000))['enrich'], 2)
             except Exception as e: r['crack'] = f'err {e}'
             if not (isinstance(r['crack'], float) and r['crack'] <= CRACK_MAX): soft.append('on cracks')
         ct = np.asarray(mid_layer(ren)[:, x0:x0 + a.win]).astype(np.float32)
