@@ -34,10 +34,11 @@ def score_windows(net, it, ws, bs=128, tta=True):
     if not ws:
         return np.zeros(0, np.float32)
     A, M = win_stack(it, ws)
+    dev = next(net.parameters()).device
     out = []
     for i in range(0, len(A), bs):
-        a = torch.from_numpy(A[i:i + bs, None]).cuda(); m = torch.from_numpy(M[i:i + bs, None]).cuda()
-        with torch.autocast('cuda', dtype=torch.float16):
+        a = torch.from_numpy(A[i:i + bs, None]).to(dev); m = torch.from_numpy(M[i:i + bs, None]).to(dev)
+        with torch.autocast(dev.type, dtype=torch.float16, enabled=dev.type == 'cuda'):   # CPU: plain fp32
             s = _tta(net, a, m, tta)
         out.append(s.float().cpu())
     return torch.cat(out).numpy()
