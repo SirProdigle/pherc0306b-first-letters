@@ -3,7 +3,7 @@
 set -euo pipefail
 W=/home/liam/projects/vesuvius-work; V=/home/liam/projects/villa
 SHA=a329895ea5e9bde78752e60dbc0a4878dd2ab909
-APPIMG=https://github.com/ScrollPrize/villa/releases/download/latest/VC3D-4eecd08-2026-10-12-linux-x86_64.AppImage   # tested 2026-10-13; the 'latest' tag moves
+APPIMG=https://github.com/ScrollPrize/villa/releases/download/vc3d-archive-latest-432302465/VC3D-c9f8c57-2026-11-02-linux-x86_64.AppImage   # pinned: has --prefetch-remote (dropped in baf5e60, 11-03); renders verified bit-identical on 343
 export DEBIAN_FRONTEND=noninteractive
 (apt-get update -qq && apt-get install -y -qq curl git rsync file libgl1 libglib2.0-0 procps libfreetype6 libfontconfig1 libxkbcommon0 libdbus-1-3 libegl1 libopengl0 libx11-6 libxcb1 build-essential >/dev/null) || true
 mkdir -p $W/envs $W/models/ink9_ens $W/vc_build_main/bin $W/fl/vc3dcfg $W/fl/vol $W/fl/tmp $W/fl/run $W/logs
@@ -18,10 +18,8 @@ if [ ! -d $V/vesuvius/src ]; then
   git fetch -q --depth 1 --filter=blob:none origin $SHA && git checkout -q FETCH_HEAD
 fi
 if [ ! -x /opt/squashfs-root/AppRun ]; then
-  # the pinned asset disappears whenever villa re-cuts its 'latest' release (2026-10-12: fb8c2c4 -> 404, every lane rendered 0 windings):
-  # fall back to whatever x86_64 AppImage the 'latest' release carries now
-  cd /opt && { curl -fsSL -o VC3D.AppImage $APPIMG || curl -fsSL -o VC3D.AppImage "$(curl -fsSL https://api.github.com/repos/ScrollPrize/villa/releases/tags/latest \
-      | python3 -c "import json,sys;print(next(a['browser_download_url'] for a in json.load(sys.stdin)['assets'] if a['name'].endswith('linux-x86_64.AppImage')))")"; } \
+  # a pinned archive build, never 'latest': 'latest' moves, and 2026-11-03's baf5e60 dropped --prefetch-remote (every render fails)
+  cd /opt && curl -fsSL -o VC3D.AppImage $APPIMG \
     && chmod +x VC3D.AppImage && ./VC3D.AppImage --appimage-extract >/dev/null
 fi
 [ -x /opt/squashfs-root/AppRun ] || { echo "SETUP FAILED: no VC3D AppImage (renderer)"; exit 1; }   # fail here, not after a 4 h fit
