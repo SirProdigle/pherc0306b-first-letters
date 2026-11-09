@@ -15,11 +15,21 @@ cp $UMB $D/umbilicus.json
 T=https://dl.ash2txt.org/datasets/spiral_datasets/$S/$VID/tracks; P=${S}_${VID}_surface_m7_L0_th0.2
 if [ -z "${NOTRACKS:-}" ]; then   # NOTRACKS=1: tracks are extracted locally (scroll without published tracks)
 cd $D/tracks; mkdir -p $P.dbm.vctracks
+getfull() {   # getfull URL FILE: resume until the size equals the server's Content-Length (a cut stream used to pass silently)
+  local want; want=$(curl -sI "$1" | tr -d '\r' | awk 'tolower($1)=="content-length:"{print $2}')
+  for t in 1 2 3 4 5 6 7 8; do
+    [ -n "$want" ] && [ -f "$2" ] && [ "$(stat -c %s "$2")" = "$want" ] && return 0
+    curl -sf --retry 3 -C - -o "$2" "$1" || sleep $((t * 5))
+  done
+  [ -n "$want" ] && [ "$(stat -c %s "$2" 2>/dev/null)" = "$want" ] || { echo "DOWNLOAD FAILED $1 ($(stat -c %s "$2" 2>/dev/null)/$want)"; return 1; }
+}
+pids=()
 for f in arclengths.f64 coordinates.i32 family_codes.i8 header.bin metadata.json offsets.i64 source_ids.u64 tortuosities.f64 z_bounds.i32; do
-  [ -s $P.dbm.vctracks/$f ] || curl -sf -o $P.dbm.vctracks/$f $T/$P.dbm.vctracks/$f &
+  getfull $T/$P.dbm.vctracks/$f $P.dbm.vctracks/$f & pids+=($!)
 done
-[ -s $P.dbm.crossings.npz ] || curl -sf -o $P.dbm.crossings.npz $T/$P.dbm.crossings.npz &
-wait
+# no published crossings cache: on an anticlockwise fit (PHerc0175A) it failed to remap ("walk crossing partner is out
+# of range") and the fallback rebuild rejects mirrored coordinates; without it the fitter computes exact crossings in ~1 min
+for pid in "${pids[@]}"; do wait $pid || { echo "tracks download failed"; exit 1; }; done   # plain 'wait' returns 0 whatever failed
 python3 - <<PY
 import json, os, urllib.request
 m = json.load(open('$P.dbm.vctracks/metadata.json')); name, size, mt = m['source_db_signature'][0]
