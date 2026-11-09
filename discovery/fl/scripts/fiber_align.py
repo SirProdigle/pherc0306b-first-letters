@@ -11,7 +11,7 @@ alignment(ct, valid, row_angle) -> dict(fibre_angles, min_diff_deg)
 import numpy as np, cv2
 import os as _os; cv2.setNumThreads(int(_os.environ.get('OMP_NUM_THREADS', '4')))  # OpenCV ignores OMP caps; uncapped it used all 32 cores
 
-PX_MM = 1000 / 8.64
+PX_MM = 1000 / float(_os.environ.get('FL_UM', '8.64'))   # same FL_UM as spectral_rows: the fibre period band is in mm
 
 
 def angular_power(img, valid, pmin_mm=0.15, pmax_mm=0.8, nang=72, px_mm=PX_MM):

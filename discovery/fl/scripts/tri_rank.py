@@ -32,6 +32,14 @@ from gap_gate import gap_stats
 from stroke_feats import shape_horiz, recur, texture_energy
 
 ROW_TOL, FIB_TOL, REL_TEX_MIN = 20.0, 12.0, 0.65
+
+
+def mid_layer(ren):
+    """the render's middle layer (15 of a 31-layer render; was hard-coded 15, wrong for any other depth)"""
+    v = zarr.open(ren, mode='r')['0']
+    return v[v.shape[0] // 2]
+
+
 CRACK_MAX, SHAPE_MIN, RECUR_MAX = 1.5, 0.20, 0.30
 ap = argparse.ArgumentParser()
 ap.add_argument('maps'); ap.add_argument('--tag', default=''); ap.add_argument('--min', type=float, default=4.0)
@@ -60,7 +68,7 @@ for f in sorted(glob.glob(os.path.join(a.maps, (a.tag + '_' if a.tag else '') + 
                  glyph=g, via='row' if s >= a.min else 'glyph')
         r['_d'], r['_ren'] = d, ren
         if os.path.exists(ren):
-            ct = np.asarray(zarr.open(ren, mode='r')['0'][15][:, x0:x0 + a.win]).astype(np.float32)
+            ct = np.asarray(mid_layer(ren)[:, x0:x0 + a.win]).astype(np.float32)
             t = texture_energy(ct, ct > 0, a.um); r['tex'] = None if t is None else round(t, 3)
         cand.append(r)
 texs = [r['tex'] for r in cand if r['tex'] is not None]
@@ -82,7 +90,7 @@ for r in cand:
             try: r['crack'] = round(gap_stats(ren, z, d=0, um=a.um, mask=m)['enrich'], 2)
             except Exception as e: r['crack'] = f'err {e}'
             if not (isinstance(r['crack'], float) and r['crack'] <= CRACK_MAX): soft.append('on cracks')
-        ct = np.asarray(zarr.open(ren, mode='r')['0'][15][:, x0:x0 + a.win]).astype(np.float32)
+        ct = np.asarray(mid_layer(ren)[:, x0:x0 + a.win]).astype(np.float32)
         sh = shape_horiz(z[:, x0:x0 + a.win], ct > 0, a.um)[0]; r['shape'] = None if sh is None else round(sh, 3)
         if sh is not None and sh < SHAPE_MIN: soft.append('round blobs, no strokes')
         if a.flat:

@@ -1,13 +1,16 @@
-"""window_score.py MAPS_ROOT [--win 2600] [--step 1300] [--redo] : for every finished maps/<winding>/ dir, slide windows (full height,
+"""window_score.py MAPS_ROOT [--win 2600] [--step 1300] [--um 8.64] [--redo] : for every finished maps/<winding>/ dir, slide windows (full height,
 width WIN px of the 31-layer render grid ~ 2.4 cm at 9.36 um) along the winding and score row periodicity with
 fl/scripts/spectral_rows.score on each side; writes spectral_win.json {side: [[x0, score], ...], best: [score, side, x0]}."""
 import sys, os, glob, json
 import numpy as np
-sys.path.insert(0, '/home/liam/projects/vesuvius-work/fl/scripts')
+if '--um' in sys.argv:                        # voxel size of the maps; spectral_rows and fiber_align read FL_UM at import
+    os.environ['FL_UM'] = sys.argv[sys.argv.index('--um') + 1]
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'scripts'))
 from spectral_rows import score, qmask_for
 from fiber_align import alignment
 import zarr, cv2
 import os as _os; cv2.setNumThreads(int(_os.environ.get('OMP_NUM_THREADS', '4')))  # OpenCV ignores OMP caps; uncapped it used all 32 cores
+UM = float(os.environ.get('FL_UM', '8.64'))
 QTHR = float(os.environ.get('FL_QUALITY_THR', '0.10'))   # same tile rule and threshold as the ink step's --mask (fastink.quality_mask)
 
 
@@ -50,8 +53,12 @@ for d in sorted(glob.glob(os.path.join(root, '*/'))):
     if (os.path.exists(out) and not REDO) or not os.path.exists(d + 'done_d0') or 'skipped' in open(d + 'done_d0').read():
         continue
     res, best = {}, (-9, None, None)
-    rdir = os.path.join(os.path.dirname(os.path.dirname(d.rstrip('/'))), 'renders', os.path.basename(d.rstrip('/')) + '.zarr')
-    ct = np.asarray(zarr.open(rdir, mode='r')['0'][15]).astype(np.float32) if os.path.exists(rdir) else None
+    name = os.path.basename(d.rstrip('/\\'))   # glob gives a trailing backslash on Windows; stripping only '/' left the name empty and the render was never found
+    rdir = os.path.join(os.path.dirname(os.path.dirname(d.rstrip('/\\'))), 'renders', name + '.zarr')
+    if os.path.exists(rdir):
+        v = zarr.open(rdir, mode='r')['0']; ct = np.asarray(v[v.shape[0] // 2]).astype(np.float32)   # middle layer (15 of a 31-layer render)
+    else:
+        ct = None
     al_list = []
     for f in glob.glob(d + '*_d0_*_z.npy'):
         side = 'rev' if '_reverse_' in f else 'fwd'
@@ -83,7 +90,7 @@ for d in sorted(glob.glob(os.path.join(root, '*/'))):
                         okal = dom is not None and min(abs(sc['angle'] - dom), 180 - abs(sc['angle'] - dom)) <= 15
                         zr = zz.astype(np.float32)
                         if zr.shape != cc.shape: zr = cv2.resize(zr, (cc.shape[1], cc.shape[0]))
-                        vb = (cc > 0) & (zr != 0); sg = 1.5 * 1000 / 8.64
+                        vb = (cc > 0) & (zr != 0); sg = 1.5 * 1000 / UM
                         mb = cv2.GaussianBlur(vb.astype(np.float32), (0, 0), sg) + 1e-6
                         zl = cv2.GaussianBlur(zr * vb, (0, 0), sg) / mb; cl = cv2.GaussianBlur(cc * vb, (0, 0), sg) / mb
                         bc = float(np.corrcoef(zl[vb], cl[vb])[0, 1]) if vb.sum() > 1000 else None
@@ -97,4 +104,4 @@ for d in sorted(glob.glob(os.path.join(root, '*/'))):
     res['best'] = best
     res['align'] = al_list
     json.dump(res, open(out, 'w'))
-    print(os.path.basename(d.rstrip('/')), best, flush=True)
+    print(name, best, flush=True)

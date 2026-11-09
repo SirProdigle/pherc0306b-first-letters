@@ -10,7 +10,8 @@ usage: spectral_rows.py z.npy [...]   -> json per map
 import sys, json, numpy as np, cv2
 import os as _os; cv2.setNumThreads(int(_os.environ.get('OMP_NUM_THREADS', '4')))  # OpenCV ignores OMP caps; uncapped it used all 32 cores
 
-PX_MM = 1000 / 8.64
+UM = float(_os.environ.get('FL_UM', '8.64'))   # voxel size of the maps in um; 8.64 = the 2025 scans this was written on. Set FL_UM (or window_score --um) for 9.362 um scrolls
+PX_MM = 1000 / UM
 DS = 4                                # analyse at 34.6 um/px
 
 

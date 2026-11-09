@@ -12,7 +12,7 @@ Needs CUDA (x_glyph.evaluate.score_windows); GPU memory fraction capped at 6 % (
 import sys, os, glob, json, argparse
 import numpy as np, cv2, torch
 cv2.setNumThreads(int(os.environ.get('OMP_NUM_THREADS', '4')))
-W = '/home/liam/projects/vesuvius-work'
+W = os.environ.get('FL_W', '/home/liam/projects/vesuvius-work')   # vesuvius-work root (holds x_glyph/)
 sys.path.insert(0, f'{W}/x_glyph')
 from common import a_from_z, onsheet_windows, WIN as GWIN, UM          # noqa: E402  x_glyph helpers
 from evaluate import score_windows                                      # noqa: E402
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     ap.add_argument('--um', type=float, default=8.64); ap.add_argument('--model', default=f'{W}/x_glyph/models/gA.pt')
     ap.add_argument('--redo', action='store_true')
     a = ap.parse_args()
-    dev = 'cuda'
+    dev = 'cuda' if torch.cuda.is_available() else 'cpu'
     if dev == 'cuda':
         torch.cuda.set_per_process_memory_fraction(0.06)
     torch.set_num_threads(int(os.environ.get('OMP_NUM_THREADS', '4')))
@@ -70,4 +70,4 @@ if __name__ == '__main__':
             res[side] = window_scores(np.load(f).astype(np.float32), a.um, net)
         if len(res) > 1:
             json.dump(res, open(out, 'w'))
-            print(os.path.basename(d.rstrip('/')), {k: max((s for _, s in v if s is not None), default=None) for k, v in res.items() if k != 'model'}, flush=True)
+            print(os.path.basename(d.rstrip('/\\')), {k: max((s for _, s in v if s is not None), default=None) for k, v in res.items() if k != 'model'}, flush=True)

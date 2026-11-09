@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from spectral_rows import score, qmask_for, count_rows
 from fiber_align import alignment
 import zarr, cv2
-W = '/home/liam/projects/vesuvius-work'
+W = os.environ.get('FL_W', '/home/liam/projects/vesuvius-work')
 while True:
     n = 0
     for d in sorted(glob.glob(f'{W}/fl/*/screen2/maps/*/')):
@@ -25,9 +25,9 @@ while True:
                 res[side] = score(zz, qmask=qm)
                 if res[side].get('score') is not None and res[side]['score'] >= 3:
                     res[side].update(count_rows(zz, res[side]['angle'], qm))
-                    r = os.path.join(os.path.dirname(os.path.dirname(d.rstrip('/'))), 'renders', os.path.basename(d.rstrip('/')) + '.zarr')
+                    r = os.path.join(os.path.dirname(os.path.dirname(d.rstrip('/\\'))), 'renders', os.path.basename(d.rstrip('/\\')) + '.zarr')
                     if os.path.exists(r):
-                        ct = np.asarray(zarr.open(r, mode='r')['0'][15]).astype(np.float32); vv = ct > 0
+                        v = zarr.open(r, mode='r')['0']; ct = np.asarray(v[v.shape[0] // 2]).astype(np.float32); vv = ct > 0
                         if qm is not None:
                             vv &= cv2.resize(qm.astype(np.uint8), (vv.shape[1], vv.shape[0]), interpolation=cv2.INTER_NEAREST) > 0
                         zr = zz.astype(np.float32)
