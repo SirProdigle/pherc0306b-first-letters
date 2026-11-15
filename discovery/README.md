@@ -35,6 +35,19 @@ Four files were cut down to PHerc. 0306B entries only; their entries are otherwi
 - `x_deepread/push/jobs_b1_w074_only.tsv`;
 - `jobs_b2_w074_only.tsv`.
 
+## Tracks from another location
+
+`x_recipe_erwin/remote/erwin_data.sh` downloads the spiral tracks from `dl.ash2txt.org/datasets/spiral_datasets/`. Set `TRACKS_BASE` to read the same layout (`<base>/<scroll>/<volume id>/tracks/`) from somewhere else: a `file://` folder, or an HTTP mirror that answers with the file size directly, without a redirect. With the variable unset nothing changes.
+
+Four scrolls in `fl/scrolls.json` have no tracks on dl.ash2txt.org (PHerc. 0846B, 1203, 1218 and 1545; checked 2026-11-15). Track sets for one 1,500-slice band of each, made with villa's extractor, are published at [Ahggggg/spiral-tracks-four-scrolls](https://github.com/Ahggggg/spiral-tracks-four-scrolls) (release `v1`). Its `fetch_tracks.sh` downloads one scroll into that layout:
+
+```
+bash fetch_tracks.sh https://github.com/Ahggggg/spiral-tracks-four-scrolls/releases/download/v1 PHerc1545 /data/spiral_tracks
+TRACKS_BASE=file:///data/spiral_tracks bash erwin_data.sh PHerc1545 5300 6800 ACW umbilicus_PHerc1545_drobkov.json
+```
+
+Only the tracks stage of `erwin_data.sh` has been run with these track sets; the rest of the lane has not.
+
 ## Dependencies
 
 - villa (github.com/ScrollPrize/villa): `vesuvius/src` and Lasagna at `a329895ea5e9`; `fit_spiral.py` at `0fb38c45b` with three local patches (Erwin Nieuwlaar's shell-optional patch, a TrackGraph crossing-cache fix, and a port of villa PR #2028); the native modules in `volume-cartographer/python/vc/`.
