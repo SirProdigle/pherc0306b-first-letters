@@ -1,0 +1,42 @@
+{
+ "name": "hn4_decoy_12gb",
+ "note": "DENOISE hard-negative arm: self_decoy recipe, seed 0; online hard negatives on labelled background px, weight 1 + gain * p (gain 0306B 4, anchor 4); DECOY control (0306B labels moved 3.5 x 3.0 mm) | 12 GB variant: grad_ckpt block, vram_gb 10.5 (nothing else changed)",
+ "init": "base",
+ "variant": "decoy",
+ "regions": [
+  "A6",
+  "w052",
+  "w053",
+  "w059",
+  "w109"
+ ],
+ "anchor": [
+  "w058",
+  "w060"
+ ],
+ "training": {
+  "steps": 600,
+  "micro": 4,
+  "n1447": 2,
+  "accum": 4,
+  "w306": 0.5,
+  "lr": 2e-05,
+  "min_lr": 2e-06,
+  "warmup_frac": 0.05,
+  "weight_decay": 1e-06,
+  "seed": 0,
+  "vram_gb": 10.5,
+  "save_steps": [
+   300
+  ],
+  "workers": 6,
+  "grad_ckpt": "block"
+ },
+ "loss": {
+  "smooth": 0.25,
+  "hn": {
+   "gain_306": 4,
+   "gain_1447": 4
+  }
+ }
+}
