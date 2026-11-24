@@ -12,7 +12,7 @@ import json;c=json.load(open('$W/fl/scrolls.json'))['$S'];v=c['volume_url'].rstr
 print(v.split('-')[0], c['voxel_um'], *c['shape'], c['surface_url'].split('amazonaws.com/')[1], c['volume_url'].split('amazonaws.com/')[1])")
 D=$DS/${DSNAME:-$S}; M=$DS/m7_$S; C=$DS/ct_$S; mkdir -p $D/tracks $D/lasagna_inputs $M $C   # DSNAME: own dataset dir for a 2nd band
 cp $UMB $D/umbilicus.json
-T=https://dl.ash2txt.org/datasets/spiral_datasets/$S/$VID/tracks; P=${S}_${VID}_surface_m7_L0_th0.2
+T=${TRACKS_BASE:-https://dl.ash2txt.org/datasets/spiral_datasets}/$S/$VID/tracks; P=${S}_${VID}_surface_m7_L0_th0.2
 if [ -z "${NOTRACKS:-}" ]; then   # NOTRACKS=1: tracks are extracted locally (scroll without published tracks)
 cd $D/tracks; mkdir -p $P.dbm.vctracks
 getfull() {   # getfull URL FILE: resume until the size equals the server's Content-Length (a cut stream used to pass silently)
