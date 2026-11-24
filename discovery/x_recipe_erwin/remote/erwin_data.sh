@@ -34,7 +34,7 @@ python3 - <<PY
 import json, os, urllib.request
 m = json.load(open('$P.dbm.vctracks/metadata.json')); name, size, mt = m['source_db_signature'][0]
 if not os.path.exists(name):
-    req = urllib.request.Request('$T/' + name, headers={'Range': 'bytes=0-65535'}); head = urllib.request.urlopen(req).read()
+    req = urllib.request.Request('$T/' + name, headers={'Range': 'bytes=0-65535'}); head = urllib.request.urlopen(req).read(65536)   # file:// ignores Range
     with open(name, 'wb') as f: f.write(head); f.truncate(size)
     os.utime(name, ns=(mt, mt)); print('placeholder', name, size, len(head))
 PY
